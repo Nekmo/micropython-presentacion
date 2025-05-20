@@ -36,6 +36,7 @@ HTML = '''
       <button class="connect">Conectar</button>
       <button class="send" disabled>▶ Ejecutar</button>
       <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
     </div>
     
     <div class="container">
@@ -46,7 +47,7 @@ HTML = '''
 
   </div>
   
-  <video controls style="max-width: 100%; display: none;">
+  <video controls class="micropython-demo-video">
     <source src="{video_path}" type="video/mp4">
     Your browser does not support the video tag.
   </video>

@@ -34,6 +34,7 @@ release = 'MIT'
 extensions = [
     'sphinx_revealjs',
     'micropython_demo',
+    'sphinxcontrib.video',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

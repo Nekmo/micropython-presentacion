@@ -319,6 +319,7 @@ function addEditor(rootEl, monaco) {
     let connectEl = toolbarEl.querySelector(".connect");
     let sendEl = toolbarEl.querySelector(".send");
     let restartEl = toolbarEl.querySelector(".restart");
+    let toggleVideoEl = toolbarEl.querySelector(".toggle-video");
 
     let editorEl = rootEl.querySelector(".editor");
     let resizerEl = rootEl.querySelector(".resizer");
@@ -358,6 +359,20 @@ function addEditor(rootEl, monaco) {
         await restartESP();
     });
 
+    toggleVideoEl.addEventListener("click", (e) => {
+        const cameraBox = document.getElementById("camera-box");
+        if (cameraBox.classList.contains("demo")) {
+            cameraBox.classList.remove("demo");
+            cameraBox.classList.add("camera");
+            toggleVideoEl.textContent = "Vídeo";
+        } else {
+            cameraBox.classList.remove("camera");
+            cameraBox.classList.add("demo");
+            toggleVideoEl.textContent = "Cámara";
+        }
+        applyDemoVideo();
+    });
+
     resizerEl.addEventListener("mousedown", (e) => {
         e.preventDefault();
         isResizing = true;
@@ -382,6 +397,16 @@ function addEditor(rootEl, monaco) {
     });
 
 }
+
+(async () => {
+    // 1. Cargar Monaco desde ESM CDN (sin RequireJS, sin define())
+    const monaco = await import('https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/+esm');
+
+    document.body.querySelectorAll(".micropython-demo").forEach((el) => {
+        addEditor(el, monaco);
+    });
+
+})();
 
 // Cámara
 let streamStarted = false;
@@ -526,11 +551,36 @@ function applyCameraConstraint(property, value) {
     track.applyConstraints({ advanced: [{ [property]: value }] });
 }
 
+function slideToggleCamera(slide) {
+    const box = document.getElementById("camera-box");
+    const controls = document.getElementById("camera-controls");
+    if (slide.querySelector(".micropython-demo")) {
+        box.classList.remove("hidden");
+        controls.style.display = "block";
+    } else {
+        box.classList.add("hidden");
+        controls.style.display = "none";
+    }
+}
+
+function applyDemoVideo(currentSlide) {
+    const micropythonDemoVideo = currentSlide.querySelector(".micropython-demo-video");
+    if (micropythonDemoVideo) {
+        const cameraBox = document.getElementById("camera-box");
+        const clonedMicropythonDemoVideo = micropythonDemoVideo.cloneNode(true);
+        const lastMicropythonDemoVideo = cameraBox.querySelector(".micropython-demo-video");
+        if (lastMicropythonDemoVideo) {
+            lastMicropythonDemoVideo.remove();
+        }
+        cameraBox.appendChild(clonedMicropythonDemoVideo);
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function(event) {
     /* Add camera-box */
     document.body.insertAdjacentHTML('beforeend', `
-      <div id="camera-box">
-        <video autoplay muted playsinline></video>
+      <div id="camera-box" class="demo">
+        <video autoplay muted playsinline id="camera-video"></video>
       </div>
       <div id="camera-controls">
           <button>📹</button>
@@ -629,27 +679,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })();
 
     Reveal.on('slidechanged', (event) => {
-        const box = document.getElementById("camera-box");
-        const controls = document.getElementById("camera-controls");
-        if (event.currentSlide.querySelector(".micropython-demo")) {
-            box.classList.remove("hidden");
-            controls.style.display = "block";
-        } else {
-            box.classList.add("hidden");
-            controls.style.display = "none";
-        }
+        slideToggleCamera(event.currentSlide);
+        applyDemoVideo(event.currentSlide);
     });
-
-
+    slideToggleCamera(getCurrentSlide());
+    applyDemoVideo(getCurrentSlide());
 });
 
-
-(async () => {
-    // 1. Cargar Monaco desde ESM CDN (sin RequireJS, sin define())
-    const monaco = await import('https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/+esm');
-
-    document.body.querySelectorAll(".micropython-demo").forEach((el) => {
-        addEditor(el, monaco);
+document.addEventListener("DOMContentLoaded", function(event) {
+    /* Autoplay video */
+    Reveal.on('slidechanged', (event) => {
+        const videos = event.currentSlide.querySelectorAll("video");
+        videos.forEach((video) => {
+            if (video && video.paused) {
+                video.play().catch((e) => {
+                    console.warn("No se pudo reproducir el video:", e);
+                });
+            }
+        });
     });
-
-})();
+});

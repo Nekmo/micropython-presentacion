@@ -40,6 +40,7 @@ sphinx==8.2.3
     # via
     #   -r requirements.in
     #   sphinx-revealjs
+    #   sphinxcontrib-video
 sphinx-revealjs==3.2.0
     # via -r requirements.in
 sphinxcontrib-applehelp==2.0.0
@@ -54,5 +55,7 @@ sphinxcontrib-qthelp==2.0.0
     # via sphinx
 sphinxcontrib-serializinghtml==2.0.0
     # via sphinx
+sphinxcontrib-video==0.4.1
+    # via -r requirements.in
 urllib3==2.4.0
     # via requests

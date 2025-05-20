@@ -13,6 +13,8 @@ Micropython
 
 .. revealjs-section::
     :data-background-color: #36760d
+    :data-transition-speed: slow
+    :data-transition: fade
 
 **Programación fácil y para todos de microcontroladores**
 
@@ -73,16 +75,21 @@ Microcontroladores
 ¿Qué son?
 ---------
 
-* Ventajas
+.. revealjs-section::
+    :data-background-color: #090a0f
 
-  * Pequeños
-  * Económicos
-  * Bajo consumo
+.. revealjs-fragments::
 
-* Desventajas
+    * Ventajas
 
-  * Poco potentes
-  * Programación más compleja
+      * 🤏 Pequeños
+      * 🤑 Económicos
+      * 🪫 Bajo consumo
+
+    * Desventajas
+
+      * 🐢 Poco potentes
+      * 😓 Programación más compleja
 
 .. revealjs-notes::
 
@@ -94,11 +101,16 @@ Microcontroladores
 Algunos usos
 ------------
 
-* Domótica
-* Robótica
-* Electrónica
-* Prototipos
-* ...
+.. revealjs-section::
+    :data-background-color: #090a0f
+
+.. revealjs-fragments::
+
+    * ☁️ Domótica
+    * 🤖 Robótica
+    * 🔌 Electrónica
+    * 🚧 Prototipos
+    * ...
 
 .. revealjs-notes::
 
@@ -106,14 +118,22 @@ Algunos usos
 
 
 
-GIF coche
+GIF robot
 ---------
-TODO: gif de un coche, un brazo robótico...
+
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/robot_fall.mp4
+    :data-background-video-loop: true
+    :data-background-size: cover
 
 
 
 Micropython
 ===========
+
+.. revealjs-section::
+    :data-background-color: #090a0f
 
 .. revealjs-notes::
 
@@ -127,33 +147,34 @@ Micropython
 Variantes
 ---------
 
-* ESP8266/ESP32
+.. revealjs-section::
+    :data-background-color: #090a0f
 
-  * Muy económico
-  * Múltiples variantes
-  * Gran comunidad
+.. revealjs-fragments::
 
-* Raspberry Pi Pico
+    * ESP8266/ESP32
 
-  * Económico
-  * Gran soporte
-  * Bien documentado
+      * 🤑 Muy económico
+      * 😄 Múltiples variantes
+      * 👥 Gran comunidad
 
-* PyBoard
+    * Raspberry Pi Pico
 
-  * Mayor precio
-  * Soporte oficial
-  * Muy confiable
+      * 💸 Económico
+      * 🔨 Gran soporte
+      * 📚 Bien documentado
 
 .. revealjs-notes::
 
-   Entre los microcontroladores que soportan Micropython podemos destacar los ESP8266 y ESP32 [...], la Raspberry Pi
-   Pico [...] o la PyBoard [...], aunque hay muchos más.
+   Entre los microcontroladores que soportan Micropython podemos destacar los ESP8266 y ESP32 [...] o la Raspberry Pi Pico [...], aunque hay muchos más.
 
 
 
 ESP32
 =====
+
+.. revealjs-section::
+    :data-background-color: #090a0f
 
 .. revealjs-notes::
 
@@ -164,7 +185,11 @@ ESP32
 Dinero
 ------
 
-Gif poco dinero
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/empty_wallet.mkv
+    :data-background-video-loop: true
+    :data-background-size: cover
 
 .. revealjs-notes::
 
@@ -175,11 +200,16 @@ Gif poco dinero
 Características
 ---------------
 
-* Doble núcleo
-* Conectividad WiFi
-* Conectividad Bluetooth
-* Múltiples pines GPIO
-* ADC / DAC
+.. revealjs-section::
+    :data-background-color: #090a0f
+
+.. revealjs-fragments::
+
+    * 💪 Doble núcleo
+    * 🛜 Conectividad WiFi
+    * 📡 Conectividad Bluetooth
+    * 🔌 Múltiples pines GPIO
+    * 📟 ADC / DAC
 
 .. revealjs-notes::
 
@@ -191,8 +221,13 @@ Características
 Primeros pasos
 --------------
 
-* Flashear desde el navegador o por terminal
-* IDE web (ViperIDE) o local (Thonny)
+.. revealjs-section::
+    :data-background-color: #090a0f
+
+.. revealjs-fragments::
+
+    * ⚡ Flashear desde el navegador o por terminal
+    * 📝 IDE web (ViperIDE) o local (Thonny)
 
 TODO: instalador de micropython en presentación
 
@@ -208,6 +243,12 @@ TODO: instalador de micropython en presentación
 Demos
 =====
 
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/resistor_fire.mp4
+    :data-background-video-loop: true
+    :data-background-size: cover
+
 .. revealjs-notes::
 
    Y ya me voy callando, que seguro que lo que queréis ver son cosas en acción, y demos que luego no funcionarán.
@@ -216,6 +257,12 @@ Demos
 
 Encender un led
 ===============
+
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/leds.mp4
+    :data-background-video-loop: true
+    :data-background-size: cover
 
 .. revealjs-notes::
 
@@ -226,6 +273,9 @@ Encender un led
 Identificar los pines
 ---------------------
 
+.. image:: images/datasheet.png
+   :width: 60%
+
 .. revealjs-notes::
 
    Antes de empezar en cualquier ejemplo, es imprescindible identificar los pines de nuestro controlador. Buscad vuestro
@@ -235,6 +285,14 @@ Identificar los pines
 
 Conectar el led
 ---------------
+
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+.. video:: _static/sheet1.mp4
+   :autoplay:
+   :loop:
+   :muted:
 
 .. revealjs-notes::
 
@@ -247,7 +305,7 @@ Código led
 ----------
 
 .. revealjs-section::
-    :data-background-color: #000303
+    :data-background-color: #090a0f
 
 .. micropython-demo::
    :video: demo1.mp4
@@ -303,7 +361,11 @@ Led analógico
 GIF luces LED
 -------------
 
-TODO: gif gaming con muchas luces led
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/house_leds.mp4
+    :data-background-video-loop: true
+    :data-background-size: cover
 
 .. revealjs-notes::
 
@@ -354,7 +416,11 @@ Código botón
 GIF recreativa
 --------------
 
-TODO: gif recreativa con botones
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/arcades.mp4
+    :data-background-video-loop: true
+    :data-background-size: cover
 
 .. revealjs-notes::
 
@@ -386,9 +452,9 @@ Código LED RGB
    from time import sleep
    import urandom
 
-   r = PWM(Pin(35), freq=1000)
-   g = PWM(Pin(36), freq=1000)
-   b = PWM(Pin(37), freq=1000)
+   r = PWM(Pin(1), freq=1000)
+   g = PWM(Pin(2), freq=1000)
+   b = PWM(Pin(3), freq=1000)
 
    def set_color(red, green, blue):
        r.duty(red)
@@ -414,7 +480,11 @@ Código LED RGB
 GIF cientos de cables
 ---------------------
 
-TODO: gif de un montón de cables
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-background-video: _static/cables.mp4
+    :data-background-video-loop: true
+    :data-background-size: cover
 
 .. revealjs-notes::
 
@@ -427,10 +497,12 @@ TODO: gif de un montón de cables
 Protocolos de comunicación
 ==========================
 
-* OneWire (1 pin)
-* I2C (2 pines)
-* SPI (3/4+ pines)
-* UART (2+ pines)
+.. revealjs-fragments::
+
+    * 1️⃣ OneWire (1 pin)
+    * 2️⃣ I2C (2 pines)
+    * 3️⃣ SPI (3/4+ pines)
+    * 📟 UART (2+ pines)
 
 .. revealjs-notes::
 
@@ -468,7 +540,7 @@ Código LED WS2812
    from time import sleep
 
    NUM_LEDS = 3
-   PIN_NUM = 13
+   PIN_NUM = 1
 
    leds = apa106.APA106(Pin(PIN_NUM), NUM_LEDS)
    colors = [
@@ -604,10 +676,12 @@ Demo coche
 Recursos
 ========
 
-* **Web oficial**: https://micropython.org/
-* **Instalación**: TODO.
-* **Editor online**: https://viper-ide.org/
-* **Simulador online**: https://wokwi.com/
+.. revealjs-fragments::
+
+    * 🌐 **Web oficial**: https://micropython.org/
+    * ⚡ **Instalación**: TODO.
+    * 📝 **Editor online**: https://viper-ide.org/
+    * 🥽 **Simulador online**: https://wokwi.com/
 
 .. revealjs-notes::
 

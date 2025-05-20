@@ -191,6 +191,10 @@ section.has-light-background {
   }
 }
 
+// Video
+video::-webkit-media-controls {
+  display: none;
+}
 
 
 // Theme template ------------------------------
@@ -290,6 +294,20 @@ ul li {
   }
 }
 
+#camera-box {
+  &.camera {
+    .micropython-demo-video {
+      display: none;
+    }
+  }
+
+  &.demo {
+    #camera-video {
+      display: none;
+    }
+  }
+}
+
 @import "animations";
 
 /* Green lines */
@@ -302,6 +320,16 @@ ul li {
     color: #e0bf4d;
   }
 }
+
+/* Tron */
+[data-background-color="#44812a"] {
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFE45E;
+    font-weight: bold;
+    font-size: 2.4em;
+  }
+}
+
 
 /* Slides with images without background */
 #intro, #opensouthcode, #sobre-mi-nekmo, #python {
