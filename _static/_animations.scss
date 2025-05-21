@@ -191,64 +191,6 @@
 }
 
 
-/* Tron */
-.tron {
-  position: relative;
-  height: 100%;
-  background: linear-gradient(#44812a 25%, #7ce765 50%, #7ce765 50%, #44812a 100%);
-}
-
-.tron-wrap {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  margin: 0 auto;
-  perspective: 360px;
-  perspective-origin: 50% 50%;
-}
-
-.top-plane, .bottom-plane {
-  width: 200%;
-  height: 130%;
-  position: absolute;
-  bottom: -30%;
-  left: -50%;
-  background-image: -webkit-linear-gradient(#bbf4a2 2px, transparent 2px), -webkit-linear-gradient(left, #bbf4a2 2px, transparent 2px);
-  background-size: 100px 100px,100px 100px;
-  background-position: -1px -1px,-1px -1px;
-  transform: rotateX(85deg);
-  animation: planeMoveTop 2s infinite linear;
-}
-
-.bottom-plane {
-  transform: rotateX(-85deg);
-  top: -30%;
-  animation: planeMoveBot 2s infinite linear;
-}
-
-@keyframes planeMoveTop {
-  from {
-    background-position: 0px -100px,0px 0px;
-  }
-  to {
-    background-position: 0px 0px, 100px 0px;
-  }
-}
-@keyframes planeMoveBot {
-  from {
-    background-position: 0px 0px,0px 0px;
-  }
-  to {
-    background-position: 0px -100px, 100px 0px;
-  }
-}
-@media (max-height: 350px) {
-  .tron-wrap {
-    perspective: 210px;
-  }
-}
-
-
 /* Stars */
 .stars {
   height: 100%;

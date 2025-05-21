@@ -24,15 +24,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 
-    /* Add tron to the slides */
-    var tronBgs = document.querySelectorAll("[data-background-hash='0#44812anullnullnullnullnull']");
-    tronBgs.forEach((el) => {
-        el.classList.add("tron");
-        const wrap = addDiv(el, "tron-wrap");
-        addDiv(wrap, "top-plane");
-        addDiv(wrap, "bottom-plane");
-    });
-
     /* Add star to the slides */
     var starsBgs = document.querySelectorAll("[data-background-hash='0#090a0fnullnullnullnullnull']");
     starsBgs.forEach((el) => {

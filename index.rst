@@ -64,7 +64,7 @@ Microcontroladores
 ==================
 
 .. revealjs-section::
-    :data-background-color: #44812a
+    :data-background-color: #090a0f
 
 .. revealjs-notes::
 
@@ -80,13 +80,13 @@ Microcontroladores
 
 .. revealjs-fragments::
 
-    * Ventajas
+    * **Ventajas**
 
       * 🤏 Pequeños
       * 🤑 Económicos
       * 🪫 Bajo consumo
 
-    * Desventajas
+    * **Desventajas**
 
       * 🐢 Poco potentes
       * 😓 Programación más compleja
@@ -98,8 +98,8 @@ Microcontroladores
 
 
 
-Algunos usos
-------------
+Algunos **usos**
+----------------
 
 .. revealjs-section::
     :data-background-color: #090a0f
@@ -152,17 +152,17 @@ Variantes
 
 .. revealjs-fragments::
 
-    * ESP8266/ESP32
+    * **ESP8266/ESP32**
 
-      * 🤑 Muy económico
-      * 😄 Múltiples variantes
-      * 👥 Gran comunidad
+      * 🤑 Muy **económico**
+      * 😄 Múltiples **variantes**
+      * 👥 Gran **comunidad**
 
-    * Raspberry Pi Pico
+    * **Raspberry Pi Pico**
 
-      * 💸 Económico
-      * 🔨 Gran soporte
-      * 📚 Bien documentado
+      * 💸 **Económico**
+      * 🔨 Gran **soporte**
+      * 📚 Bien **documentado**
 
 .. revealjs-notes::
 
@@ -205,11 +205,11 @@ Características
 
 .. revealjs-fragments::
 
-    * 💪 Doble núcleo
-    * 🛜 Conectividad WiFi
-    * 📡 Conectividad Bluetooth
-    * 🔌 Múltiples pines GPIO
-    * 📟 ADC / DAC
+    * 💪 **Doble** núcleo
+    * 🛜 Conectividad **WiFi**
+    * 📡 Conectividad **Bluetooth**
+    * 🔌 Múltiples pines **GPIO**
+    * 📟 **ADC** / **DAC**
 
 .. revealjs-notes::
 
@@ -226,8 +226,8 @@ Primeros pasos
 
 .. revealjs-fragments::
 
-    * ⚡ Flashear desde el navegador o por terminal
-    * 📝 IDE web (ViperIDE) o local (Thonny)
+    * ⚡ **Flashear desde el navegador** o por terminal
+    * 📝 **IDE web** *(ViperIDE)* o local *(Thonny)*
 
 TODO: instalador de micropython en presentación
 
@@ -255,8 +255,8 @@ Demos
 
 
 
-Encender un led
-===============
+Encender un **led**
+===================
 
 .. revealjs-section::
     :data-background-color: #333333
@@ -270,8 +270,8 @@ Encender un led
 
 
 
-Identificar los pines
----------------------
+Identificar **los pines**
+-------------------------
 
 .. revealjs-section::
    :data-background-color: #DDDDDD
@@ -286,8 +286,8 @@ Identificar los pines
    nos interesan.
 
 
-Conectar el led
----------------
+**Conectar** el led
+-------------------
 
 .. revealjs-section::
    :data-background-color: #DDDDDD
@@ -304,8 +304,8 @@ Conectar el led
 
 
 
-Código led
-----------
+Código **led**
+--------------
 
 .. revealjs-section::
     :data-background-color: #090a0f
@@ -332,11 +332,11 @@ Código led
    así una salida digital, es decir, binaria, que puede ser 0 o 1.
 
 
-Led analógico
--------------
+Led **analógico**
+-----------------
 
 .. revealjs-section::
-    :data-background-color: #000303
+    :data-background-color: #090a0f
 
 .. micropython-demo::
    :video: demo2.mp4
@@ -376,8 +376,8 @@ GIF luces LED
 
 
 
-Conectar un botón
-=================
+Conectar **un botón**
+=====================
 
 .. revealjs-section::
    :data-background-color: #DDDDDD
@@ -396,11 +396,11 @@ Conectar un botón
 
 
 
-Código botón
-------------
+**Código** botón
+----------------
 
 .. revealjs-section::
-    :data-background-color: #000303
+    :data-background-color: #090a0f
 
 .. micropython-demo::
    :video: demo3.mp4
@@ -439,8 +439,8 @@ GIF recreativa
 
 
 
-Conectar un LED RGB
-===================
+Conectar un **LED RGB**
+=======================
 
 .. revealjs-section::
    :data-background-color: #DDDDDD
@@ -458,11 +458,11 @@ Conectar un LED RGB
 
 
 
-Código LED RGB
---------------
+**Código** LED RGB
+------------------
 
 .. revealjs-section::
-    :data-background-color: #000303
+    :data-background-color: #090a0f
 
 .. micropython-demo::
    :video: demo4.mp4
@@ -513,8 +513,11 @@ GIF cientos de cables
 
 
 
-Protocolos de comunicación
-==========================
+**Protocolos** de comunicación
+==============================
+
+.. revealjs-section::
+    :data-background-color: #090a0f
 
 .. revealjs-fragments::
 
@@ -534,8 +537,8 @@ Protocolos de comunicación
 
 
 
-Conectar un led WS2812
-======================
+Conectar un **led WS2812**
+==========================
 
 .. revealjs-section::
    :data-background-color: #DDDDDD
@@ -553,11 +556,11 @@ Conectar un led WS2812
 
 
 
-Código LED WS2812
------------------
+**Código** LED WS2812
+---------------------
 
 .. revealjs-section::
-    :data-background-color: #000303
+    :data-background-color: #090a0f
 
 .. micropython-demo::
    :video: demo5.mp4
@@ -591,8 +594,8 @@ Código LED WS2812
 
 
 
-I2C
-===
+**I2C**
+=======
 
 .. revealjs-notes::
 
@@ -603,8 +606,8 @@ I2C
 
 
 
-Conectar sensor y pantalla I2C
-==============================
+Conectar **sensor** y **pantalla I2C**
+======================================
 
 .. revealjs-section::
    :data-background-color: #DDDDDD
@@ -624,11 +627,11 @@ Conectar sensor y pantalla I2C
 
 
 
-Código sensor y pantalla I2C
-----------------------------
+**Código** sensor y pantalla I2C
+--------------------------------
 
 .. revealjs-section::
-    :data-background-color: #000303
+    :data-background-color: #090a0f
 
 .. micropython-demo::
    :video: demo6.mp4
@@ -659,8 +662,8 @@ Código sensor y pantalla I2C
 
 
 
-WiFi y bluetooth
-=================
+**WiFi** y **bluetooth**
+========================
 
 .. revealjs-notes::
 
@@ -669,8 +672,8 @@ WiFi y bluetooth
 
 
 
-Código coche
-------------
+**Código** coche
+----------------
 
 .. revealjs-section::
     :data-background-color: #000303
@@ -686,8 +689,8 @@ Código coche
 
 
 
-Demo coche
-----------
+Demo **coche**
+--------------
 
 .. revealjs-notes::
 
