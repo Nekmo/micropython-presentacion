@@ -574,47 +574,6 @@ $sway-type: "sway-left-to-right", "sway-right-to-left";
 
 }
 
-/* Gray shapes */
-.gray-shapes {
-  .gray-shape {
-    position: fixed;
-
-    background-size: contain;
-    background-repeat: no-repeat;
-
-    animation-name: spin;
-    animation-duration: 50000ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-  .gray-shape:nth-child(1) {
-    top: -40vh;
-    left: -40vh;
-    width: 80vh;
-    height: 80vh;
-    background-image: url("shape1.svg");
-  }
-
-  .gray-shape:nth-child(2) {
-    bottom: -30vh;
-    left: -20vh;
-    width: 180vh;
-    height: 180vh;
-    z-index: -1;
-    background-image: url("shape2.svg");
-    animation-duration: 70000ms;
-    animation-direction: reverse;
-  }
-
-  .gray-shape:nth-child(3) {
-    bottom: -10vh;
-    right: -10vh;
-    width: 40vh;
-    height: 40vh;
-    background-image: url("shape3.svg");
-  }
-}
 
 @keyframes spin {
     from {
@@ -701,4 +660,66 @@ div[data-background-hash="0linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #2
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #FFD538; }
+}
+
+/* Circuit */
+@keyframes diagonalScroll {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  50% {
+    background-position: 30px 0;
+  }
+  0% {
+    background-position: 0 0, 0 0;
+  }
+
+}
+
+.circuit {
+  background-repeat: repeat-x;
+  background-color: #DDDDDD;
+  background: linear-gradient(to bottom, transparent 0%, #DDDDDD 40%), url("circuits_background.png");
+  animation: diagonalScroll 10s linear infinite;
+
+  .gray-shape {
+    position: fixed;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    animation-name: spin;
+    animation-duration: 50000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  //.gray-shape-0 {
+  //  top: -40vh;
+  //  left: -40vh;
+  //  width: 80vh;
+  //  height: 80vh;
+  //  background-image: url("shape1.svg");
+  //  opacity: 40%;
+  //}
+
+  .gray-shape:nth-child(2) {
+    bottom: -50vh;
+    left: -30vh;
+    width: 80vh;
+    height: 80vh;
+    z-index: -1;
+    background-image: url("shape2.svg");
+    animation-duration: 70000ms;
+    animation-direction: reverse;
+    opacity: 20%;
+  }
+
+  .gray-shape-2 {
+    bottom: -10vh;
+    right: -10vh;
+    width: 40vh;
+    height: 40vh;
+    background-image: url("shape3.svg");
+  }
 }

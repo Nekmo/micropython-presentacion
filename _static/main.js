@@ -42,6 +42,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 
+    /* Add circuit to the slides */
+    var circuitBgs = document.querySelectorAll("[data-background-hash='0#DDDDDDnullnullnullnullnull']");
+    circuitBgs.forEach((el) => {
+        el.classList.add("circuit");
+        for (var i = 0; i < 5; i++) {
+            addDiv(el, `gray-shape gray-shape-${i}`);
+        }
+        // const wrap = addDiv(el, "circuit-wrap");
+        // addDiv(wrap, "top-plane");
+        // addDiv(wrap, "bottom-plane");
+    });
+
+
     // Reveal.on('slidechanged', (event) => {
     //     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
     //     playAsciinema(event.currentSlide);

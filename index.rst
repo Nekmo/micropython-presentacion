@@ -273,6 +273,9 @@ Encender un led
 Identificar los pines
 ---------------------
 
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
 .. image:: images/datasheet.png
    :width: 60%
 
@@ -289,7 +292,7 @@ Conectar el led
 .. revealjs-section::
    :data-background-color: #DDDDDD
 
-.. video:: _static/sheet1.mp4
+.. video:: _static/sheet1.mkv
    :autoplay:
    :loop:
    :muted:
@@ -376,6 +379,14 @@ GIF luces LED
 Conectar un botón
 =================
 
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+.. video:: _static/sheet3.mkv
+   :autoplay:
+   :loop:
+   :muted:
+
 .. revealjs-notes::
 
    No sólo podemos entregar valores de salida. También podemos leer valores de entrada, como es el caso de un botón.
@@ -430,6 +441,14 @@ GIF recreativa
 
 Conectar un LED RGB
 ===================
+
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+.. video:: _static/sheet4.mkv
+   :autoplay:
+   :loop:
+   :muted:
 
 .. revealjs-notes::
 
@@ -518,6 +537,14 @@ Protocolos de comunicación
 Conectar un led WS2812
 ======================
 
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+.. video:: _static/sheet5.mkv
+   :autoplay:
+   :loop:
+   :muted:
+
 .. revealjs-notes::
 
    Vamos a empezar con el protocolo WS2812, que es el que utilizan los LEDs RGB de tipo NeoPixel. Este protocolo
@@ -578,6 +605,14 @@ I2C
 
 Conectar sensor y pantalla I2C
 ==============================
+
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+.. video:: _static/sheet6.mkv
+   :autoplay:
+   :loop:
+   :muted:
 
 .. revealjs-notes::
 
