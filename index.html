@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Micropython</title>
+    <link rel="stylesheet" type="text/css" href="_static/revealjs/dist/reveal.css?v=d4488b42" />
+    <link rel="stylesheet" href="_static/revealjs/dist/theme/.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme.css?v=97ab2cdb" />
+    <script src="_static/main.js?v=d5a0d8fc"></script>
+    <link rel="next" title="(WIP) Micropython: programación fácil y para todos de microcontroladores" href="README.html" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <div class="toctree-wrapper compound">
+</div>
+<section >
+<section data-background-color="#36760d" data-transition-speed="slow" data-transition="fade" id="intro">
+<h1>Micropython</h1>
+<p><strong>Programación fácil y para todos de microcontroladores</strong></p>
+<aside class="notes">Hola a todos, muchas gracias por venir.</aside></section>
+</section>
+<section >
+<section data-background-color="#090a0f" data-transition-speed="slow" data-transition="fade" id="sobre-mi-nekmo">
+<h2>Sobre mí <strong>Nekmo</strong></h2>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><a class="reference internal image-reference" href="_images/cara.svg"><img alt="_images/cara.svg" src="_images/cara.svg" style="width: 200px;" />
+</a>
+<p><em>Programador Python</em></p>
+</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">Soy Juan José, trabajo en Plytix aquí en Málaga, y me conocen mejor en redes como Nekmo por otras charlas para
+Python Málaga, aunque el día de hoy hablaré de un tema un poco diferente al habitual.</aside></section>
+</section>
+<section >
+<section data-background-color="#090a0f" id="id1">
+<h2>Micropython</h2>
+<aside class="notes">Vamos a hablar de microcontroladores y Micropython, un ámbito seguramente diferente para muchos. Por ello, me
+gustaría saber cuántos conocéis ya sobre este mundillo.</aside></section>
+</section>
+<section >
+<section data-background-color="#090a0f" id="microcontroladores">
+<h2>Microcontroladores</h2>
+<aside class="notes">No os preocupéis por los que no conozcáis sobre este el tema, ya que iremos desde el principio.</aside></section>
+<section data-background-color="#090a0f" id="que-son">
+<h3>¿Qué son?</h3>
+<ul class="simple">
+<li class="fragment"><p><strong>Ventajas</strong></p>
+<ul>
+<li><p>🤏 Pequeños</p></li>
+<li><p>🤑 Económicos</p></li>
+<li><p>🪫 Bajo consumo</p></li>
+</ul>
+</li>
+<li class="fragment"><p><strong>Desventajas</strong></p>
+<ul>
+<li><p>🐢 Poco potentes</p></li>
+<li><p>😓 Programación más compleja</p></li>
+</ul>
+</li>
+</ul>
+<aside class="notes">Como os podréis imaginar por el nombre, los microcontroladores son pequeños ordenadores, como puede ser una Raspberry
+Pi, pero mucho más pequeños y con menos recursos. Entre sus ventajas tenemos [...] y entre sus desventajas [...].</aside></section>
+<section data-background-color="#090a0f" id="algunos-usos">
+<h3>Algunos <strong>usos</strong></h3>
+<ul class="simple">
+<li class="fragment"><p>☁️ Domótica</p></li>
+<li class="fragment"><p>🤖 Robótica</p></li>
+<li class="fragment"><p>🔌 Electrónica</p></li>
+<li class="fragment"><p>🚧 Prototipos</p></li>
+<li class="fragment"><p>...</p></li>
+</ul>
+<aside class="notes">Se utilizan en muchos ámbitos, como la domótica, robótica, electrónica, prototipos y muchos más.</aside></section>
+<section data-background-color="#333333" data-background-video="_images/robot_fall.mp4" data-background-video-loop="true" data-background-size="cover" id="gif-robot">
+<h3>GIF robot</h3>
+</section>
+</section>
+<section >
+<section data-background-color="#090a0f" id="id2">
+<h2>Micropython</h2>
+<aside class="notes">Si recordáis, hemos dicho como uno de sus puntos débiles que son difíciles de programar. Y hasta hace no mucho era
+así. Pero desde hace unos años, tenemos algunas soluciones como Micropython que nos permiten programar estos
+microcontroladores de una forma más sencilla. Micropython es una variante de Python 3 reducida y adaptada para
+algunos de estos microcontroladores.</aside></section>
+<section data-background-color="#090a0f" id="variantes">
+<h3>Variantes</h3>
+<ul class="simple">
+<li class="fragment"><p><strong>ESP8266/ESP32</strong></p>
+<ul>
+<li><p>🤑 Muy <strong>económico</strong></p></li>
+<li><p>😄 Múltiples <strong>variantes</strong></p></li>
+<li><p>👥 Gran <strong>comunidad</strong></p></li>
+</ul>
+</li>
+<li class="fragment"><p><strong>Raspberry Pi Pico</strong></p>
+<ul>
+<li><p>💸 <strong>Económico</strong></p></li>
+<li><p>🔨 Gran <strong>soporte</strong></p></li>
+<li><p>📚 Bien <strong>documentado</strong></p></li>
+</ul>
+</li>
+</ul>
+<aside class="notes">Entre los microcontroladores que soportan Micropython podemos destacar los ESP8266 y ESP32 [...] o la Raspberry Pi Pico [...], aunque hay muchos más.</aside></section>
+</section>
+<section >
+<section data-background-color="#090a0f" id="esp32">
+<h2>ESP32</h2>
+<aside class="notes">En estas demostraciones vamos a utilizar un ESP32, porque sencillamente...</aside></section>
+<section data-background-color="#333333" data-background-video="_images/empty_wallet.mkv" data-background-video-loop="true" data-background-size="cover" id="dinero">
+<h3>Dinero</h3>
+<aside class="notes">... la pela es la pela. Y aquí no estoy para gastar mucho dinero.</aside></section>
+<section data-background-color="#090a0f" id="caracteristicas">
+<h3>Características</h3>
+<ul class="simple">
+<li class="fragment"><p>💪 <strong>Doble</strong> núcleo</p></li>
+<li class="fragment"><p>🛜 Conectividad <strong>WiFi</strong></p></li>
+<li class="fragment"><p>📡 Conectividad <strong>Bluetooth</strong></p></li>
+<li class="fragment"><p>🔌 Múltiples pines <strong>GPIO</strong></p></li>
+<li class="fragment"><p>📟 <strong>ADC</strong> / <strong>DAC</strong></p></li>
+</ul>
+<aside class="notes">Pero no sólo es barato. También tiene un montón de características interesantes como [...]. Y todo ello partiendo
+desde 3-4€.</aside></section>
+<section data-background-color="#090a0f" id="primeros-pasos">
+<h3>Primeros pasos</h3>
+<ul class="simple">
+<li class="fragment"><p>⚡ <strong>Flashear desde el navegador</strong> o por terminal</p></li>
+<li class="fragment"><p>📝 <strong>IDE web</strong> <em>(ViperIDE)</em> o local <em>(Thonny)</em></p></li>
+</ul>
+<p>TODO: instalador de micropython en presentación</p>
+<aside class="notes">Y empezar con Micropython es tan sencillo, que ni siquiera necesitáis instalar nada. Podéis flashearlo directamente
+desde el navegador, con el instalador de esta misma presentación y desarrollada por mí, o bien utilizar las
+instrucciones del sitio oficial de Micropython. Tras ello, podéis usar un IDE web como Viper IDE, o un IDE local como
+Thonny.</aside></section>
+</section>
+<section >
+<section data-background-color="#333333" data-background-video="_images/resistor_fire.mp4" data-background-video-loop="true" data-background-size="cover" id="demos">
+<h2>Demos</h2>
+<aside class="notes">Y ya me voy callando, que seguro que lo que queréis ver son cosas en acción, y demos que luego no funcionarán.</aside></section>
+</section>
+<section >
+<section data-background-color="#333333" data-background-video="_images/leds.mp4" data-background-video-loop="true" data-background-size="cover" id="encender-un-led">
+<h2>Encender un <strong>led</strong></h2>
+<aside class="notes">Vamos a empezar por lo más sencillo de todo. Encender un led. El ejemplo más típico de todos.</aside></section>
+<section data-background-color="#DDDDDD" id="identificar-los-pines">
+<h3>Identificar <strong>los pines</strong></h3>
+<a class="reference internal image-reference" href="_images/datasheet.png"><img alt="_images/datasheet.png" src="_images/datasheet.png" style="width: 60%;" />
+</a>
+<aside class="notes">Antes de empezar en cualquier ejemplo, es imprescindible identificar los pines de nuestro controlador. Buscad vuestro
+modelo y encontraréis un datasheet como este. Los pines GPIO, que suelen empezar por G o algo similar, son los que
+nos interesan.</aside></section>
+<section data-background-color="#DDDDDD" id="conectar-el-led">
+<h3><strong>Conectar</strong> el led</h3>
+<div  class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" loop="True" muted="True" preload="auto"><source src="_images/sheet1.mkv" type=""></video></div><aside class="notes">Empezar con un led es tan sencillo como conectarlo en su polo positivo a un pin GPIO y el negativo a tierra.
+Opcionalmente podemos añadir una resistencia para proteger el led, aunque no es imprescindible.</aside></section>
+<section data-background-color="#090a0f" id="codigo-led">
+<h3>Código <strong>led</strong></h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+from machine import Pin
+from time import sleep
+
+led = Pin(1, Pin.OUT)
+
+while True:
+    led.on()
+    sleep(0.5)
+    led.off()
+    sleep(0.5)
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo1.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">El código fuente es muy sencillo. En este ejemplo, haremos encender y apagarse el led en tiempos de medio segundo.
+Como podéis observar, el código es muy similar al Python de siempre, donde utilizamos la librería de GPIO para
+definir qué pin, en este caso el GPIO 1, es el que queremos utilizar. Luego, lo inicializamos como salida. Tendremos
+así una salida digital, es decir, binaria, que puede ser 0 o 1.</aside></section>
+<section data-background-color="#090a0f" id="led-analogico">
+<h3>Led <strong>analógico</strong></h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+from machine import Pin, PWM
+from time import sleep
+
+led = PWM(Pin(1), freq=1000)
+
+while True:
+    for i in range(0, 1024, 10):
+        led.duty(i)
+        sleep(0.01)
+    for i in range(1023, -1, -10):
+        led.duty(i)
+        sleep(0.01)
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo2.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">El ejemplo anterior funcionaba de forma digital. Es decir, que el led sólo podía encenderse y apagarse. Pero si
+utilizamos una salida analógica, podemos entregar más valores, entre 0 y 1024, para así variar la intensidad del led.</aside></section>
+<section data-background-color="#333333" data-background-video="_images/house_leds.mp4" data-background-video-loop="true" data-background-size="cover" id="gif-luces-led">
+<h3>GIF luces LED</h3>
+<aside class="notes">Ahora, ya sabéis cómo llenar vuestra casa de lucecitas LED.</aside></section>
+</section>
+<section >
+<section data-background-color="#DDDDDD" id="conectar-un-boton">
+<h2>Conectar <strong>un botón</strong></h2>
+<div  class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" loop="True" muted="True" preload="auto"><source src="_images/sheet3.mkv" type=""></video></div><aside class="notes">No sólo podemos entregar valores de salida. También podemos leer valores de entrada, como es el caso de un botón.
+La conexión es igualmente sencilla, pero no utilizaremos una resistencia, ya que el propio microcontrolador tiene una
+resistencia pull-up interna. Esto significa que el pin GPIO estará en estado alto, es decir, 1, y cuando se presione
+el botón, pasará a estado bajo, es decir, 0.</aside></section>
+<section data-background-color="#090a0f" id="codigo-boton">
+<h3><strong>Código</strong> botón</h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+from machine import Pin
+from time import sleep
+
+button = Pin(1, Pin.IN, Pin.PULL_UP)
+
+while True:
+    state = not button.value()
+    print(int(state))
+    sleep(0.1)
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">Tenemos algo muy similar al led, pero en este caso el pin como entrada, y hemos configurado el pull-up interno.
+Gracias al pull-up, protegeremos el pin de cortocircuitos, pero debemos tener en cuenta que por ello tendremos valor
+1 cuando el botón no esté presionado, y valor 0 cuando sí lo esté.</aside></section>
+<section data-background-color="#333333" data-background-video="_images/arcades.mp4" data-background-video-loop="true" data-background-size="cover" id="gif-recreativa">
+<h3>GIF recreativa</h3>
+<aside class="notes">Con esto, ya estáis capacitados para crear vuestra propia recreativa con todos los botones que queráis.</aside></section>
+</section>
+<section >
+<section data-background-color="#DDDDDD" id="conectar-un-led-rgb">
+<h2>Conectar un <strong>LED RGB</strong></h2>
+<div  class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" loop="True" muted="True" preload="auto"><source src="_images/sheet4.mkv" type=""></video></div><aside class="notes">Y para vuestra recreativa, no pueden faltar LEDs RGB a todo color. Como muchos sabréis, las siglas de RGB proceden de
+Red, Green y Blue, que son los colores primarios de la luz. Cada uno de estos colores corresponderá a un pin GPIO,
+por lo que necesitaremos tres pines, y un cuarto pin para tierra.</aside></section>
+<section data-background-color="#090a0f" id="codigo-led-rgb">
+<h3><strong>Código</strong> LED RGB</h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+from machine import Pin, PWM
+from time import sleep
+import urandom
+
+r = PWM(Pin(1), freq=1000)
+g = PWM(Pin(2), freq=1000)
+b = PWM(Pin(3), freq=1000)
+
+def set_color(red, green, blue):
+    r.duty(red)
+    g.duty(green)
+    b.duty(blue)
+
+while True:
+    red = urandom.getrandbits(10)
+    green = urandom.getrandbits(10)
+    blue = urandom.getrandbits(10)
+    set_color(red, green, blue)
+    sleep(1)
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">El código es muy similar al que utilizamos antes con un led normal en modo analógico, pero en este caso tenemos 3
+pines, como si tuviésemos 3 leds diferentes, aunque en realidad están encapsulados en uno solo. Este código genera
+colores aleatorios, con valores 0 y 1024 para cada uno.</aside></section>
+<section data-background-color="#333333" data-background-video="_images/cables.mp4" data-background-video-loop="true" data-background-size="cover" id="gif-cientos-de-cables">
+<h3>GIF cientos de cables</h3>
+<aside class="notes">Pero claro, si quisiésemos tener varios leds RGB, cada uno con su color, necesitaríamos un montón de cables y ocupar
+todos los pines GPIO de nuestra placa, los cuales son muy valiosos. Para ello disponemos de protocolos de
+comunicación, que nos permiten comunicarnos con varios dispositivos a la vez.</aside></section>
+</section>
+<section >
+<section data-background-color="#090a0f" id="protocolos-de-comunicacion">
+<h2><strong>Protocolos</strong> de comunicación</h2>
+<ul class="simple">
+<li class="fragment"><p>1️⃣ <strong>OneWire</strong> (1 pin)</p></li>
+<li class="fragment"><p>2️⃣ <strong>I2C</strong> (2 pines)</p></li>
+<li class="fragment"><p>3️⃣ <strong>SPI</strong> (3/4+ pines)</p></li>
+<li class="fragment"><p>📟 <strong>UART</strong> (2+ pines)</p></li>
+</ul>
+<aside class="notes">Para ello tenemos diferentes protocolos de comunicación, que suelen variar en el número de pines, en su velocidad,
+su uso, etc. Por ejemplo, oneWire sólo llega a necesitar un pin, pero es muy lento. I2C sólo necesita 2 pines, siendo
+muy popular. SPI parte de 3 a 4 pines, pudiendo requerir más si tenemos varios dispositivos. UART, que algunos
+recordaréis de los serial bus, parte de 2 pines... y así podríamos continuar. También tenemos protocolos específicos
+y diseñados para casos concretos, como el que veremos ahora. Recordad que con cada protocolo, necesitaremos utilizar
+adicionalmente una tierra, que no se cuenta como pin de comunicación.</aside></section>
+</section>
+<section >
+<section data-background-color="#DDDDDD" id="conectar-un-led-ws2812">
+<h2>Conectar un <strong>led WS2812</strong></h2>
+<div  class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" loop="True" muted="True" preload="auto"><source src="_images/sheet5.mkv" type=""></video></div><aside class="notes">Vamos a empezar con el protocolo WS2812, que es el que utilizan los LEDs RGB de tipo NeoPixel. Este protocolo
+unidireccional sólo necesita un pin de datos, pudiendo conectar varios LEDs a la vez, cada uno con su color. Tenemos
+como cables adicionales el de tierra y el de alimentación, que en este caso es de 5V.</aside></section>
+<section data-background-color="#090a0f" id="codigo-led-ws2812">
+<h3><strong>Código</strong> LED WS2812</h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+import apa106
+from machine import Pin
+from time import sleep
+
+NUM_LEDS = 3
+PIN_NUM = 1
+
+leds = apa106.APA106(Pin(PIN_NUM), NUM_LEDS)
+colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
+positions = list(range(NUM_LEDS))
+
+while True:
+    for i in range(NUM_LEDS):
+        leds[i] = colors[positions[i]]
+    leds.write()
+    positions = [(pos + 1) % NUM_LEDS for pos in positions]
+    sleep(0.5)
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo5.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">En este código utilizaremos el módulo apa106, incluido de serie en Micropython. Este módulo incluye ya el protocolo
+de comunicación WS2812, por lo que lo único que tendremos que hacer es definir el número de LEDs y el pin de datos.
+Rotaremos los colores RGB de cada entre cada uno de los LEDs.</aside></section>
+</section>
+<section >
+<section data-background-image="_images/i2c_background.png" data-background-size="cover" id="i2c">
+<h2><strong>I2C</strong></h2>
+<aside class="notes">Aunque el protocolo WS2812 nos permite controlar múltiples LEDs individualmente con un solo cable, es un protocolo
+unidireccional diseñado en exclusiva para LEDs. En cambio, tenemos otros protocolos como I2C, que nos permiten
+comunicarnos con otros dispositivos, como pantallas, sensores, etc. Es un protocolo bidireccional que como dijimos
+antes, sólo necesita 2 pines.</aside></section>
+</section>
+<section >
+<section data-background-color="#DDDDDD" id="conectar-sensor-y-pantalla-i2c">
+<h2>Conectar <strong>sensor</strong> y <strong>pantalla I2C</strong></h2>
+<div  class="sphinx-contrib-video-container align-left"><video autoplay="True" controls="True" loop="True" muted="True" preload="auto"><source src="_images/sheet6.mkv" type=""></video></div><aside class="notes">Vamos a conectar tanto la pantalla como un sensor de temperatura a un mismo I2C, el cual utiliza 2 pines, SDA y SCL.
+Necesitaremos además una tierra y una alimentación. Cada dispositivo I2C tiene una dirección única, la cual debemos
+conocer para comunicarnos con él. No obstante, podemos utilizar el escáner I2C para conocer la dirección de nuestros
+dispositivos. En este caso, la pantalla es una OLED de 128x64 píxeles, y el sensor un SHT40 para medir la temperatura
+y humedad.</aside></section>
+<section data-background-color="#090a0f" id="codigo-sensor-y-pantalla-i2c">
+<h3><strong>Código</strong> sensor y pantalla I2C</h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+from machine import Pin, I2C
+from time import sleep
+import ssd1306
+import sht4x
+
+i2c = I2C(0, scl=Pin(1), sda=Pin(2))
+print(i2c.scan())
+oled = ssd1306.SSD1306_I2C(128, 64, i2c, 0x3C)
+sensor = sht4x.SHT4X(i2c, 0x44)
+
+while True:
+    temperature, humidity = sensor.measurements
+    oled.fill(0)
+    oled.text("Temp: {:.1f} C".format(temperature), 0, 0)
+    oled.text("Hum:  {:.1f} %".format(humidity), 0, 20)
+    oled.show()
+    sleep(2)
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo6.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">Para este código, hemos tenido que instalar 2 módulos adicionales, para lo cual podéis usar upip, el gestor de
+paquetes de Micropython. Hemos instalado el módulo ssd1306 para la pantalla, y el módulo sht4x para el sensor.
+Tenemos como direcciones para los dispositivos la 0x3C para la pantalla y la 0x22 para el sensor.</aside></section>
+</section>
+<section >
+<section data-background-image="_images/wireless_background.png" data-background-size="cover" id="wifi-y-bluetooth">
+<h2><strong>WiFi</strong> y <strong>bluetooth</strong></h2>
+<aside class="notes">Pero no sólo disponemos de protocolos de comunicación alámbrica. En controladores como el ESP32 disponemos de Wifi,
+Bluetooth, y algunos modelos Zigbee.</aside></section>
+<section data-background-color="#090a0f" id="codigo-coche">
+<h3><strong>Código</strong> coche</h3>
+
+<div class="micropython-demo">
+  <pre style="display: none;">
+import json
+import time
+from math import sqrt
+import network
+import ubinascii
+import uhashlib
+import ustruct
+import web
+from hardware import I2C
+from hardware import Pin
+from web import WebSocket
+import uasyncio as asyncio
+
+i2c0 = I2C(0, scl=Pin(26), sda=Pin(0), freq=400000)
+i2c0.writeto_mem(0x38, 0x00, bytearray([0, 0, 0, 0]))
+
+ap = network.WLAN(network.AP_IF)
+ap.active(True)
+ap.config(essid='roverc.pro', password='roverc.pro', authmode=network.AUTH_WPA_WPA2_PSK)
+
+
+while not ap.active():
+    time.sleep(1)
+
+
+ip = ap.ifconfig()[0]
+print('IP:', ip)
+
+
+app = web.App(host='0.0.0.0', port=80)
+
+
+def normalize_value(value: int | float) -> bytes:
+    value = int(value)
+    if value >= 128:
+        value = 127  # The maximum value in positive is 127
+    if value < 0:
+        value = (256 + value)
+    return value.to_bytes(1, "big")
+
+
+def coords_to_mecano_wheels(x: int, y: int, maximum: int = 127):
+    r1 = x + y
+    r2 = -x + y
+    r3 = -x + y
+    r4 = x + y
+    # r3 = x + y
+    # r4 = -x + y
+    values = [r1, r2, r3, r4]
+    max_val = max(abs(v) for v in values)
+    if max_val > maximum:
+        factor = maximum / max_val
+        values = [v * factor for v in values]
+    return [normalize_value(v) for v in values]
+
+
+async def serve_static(w, filename, mimetype):
+    # write http headers
+    w.write('HTTP/1.0 200 OK\r\n')
+    w.write(f'Content-Type: {mimetype}; charset=utf-8\r\n')
+    w.write('\r\n')
+    # write page body
+    with open(filename, 'r') as f:
+        w.write(f.read())
+    # drain stream buffer
+    await w.drain()
+
+
+# root route handler
+@app.route('/')
+async def handler(r, w):
+    return await serve_static(w, "index.html", "text/html")
+
+
+# root route handler
+@app.route('/joy.min.js')
+async def serve_script(r, w):
+    return await serve_static(w, "joy.min.js", "application/javascript")
+
+
+# /ws WebSocket route handler
+@app.route('/ws')
+async def ws_handler(r, w):
+    # upgrade connection to WebSocket
+    ws = await WebSocket.upgrade(r, w)
+    latest = None
+    while True:
+        evt = await ws.recv()
+        if evt is None or evt['type'] == 'close':
+            # handle closed stream/close event
+            break
+        elif evt['type'] == 'text':
+            # print received messages and echo them
+            print('Received:', evt['data'])
+            data = json.loads(evt['data'])
+            if "x" in data and "y" in data:
+                x, y = data['x'], data['y']
+                if (x, y) == latest:
+                    continue
+                try:
+                    wheel1, wheel2, wheel3, wheel4 = coords_to_mecano_wheels(x, y)
+                except OverflowError:
+                    continue
+                print("Wheels:", *(w[0] for w in (wheel1, wheel2, wheel3, wheel4)))
+                i2c0.writeto_mem(0x38, 0x00, b"".join([wheel1, wheel2, wheel3, wheel4]))
+                latest = x, y
+            elif "claw" in data:
+                value = 8 if data["claw"] else 87
+                i2c0.writeto_mem(0x38, 0x10, value.to_bytes(1, 'big'))
+
+
+# Start event loop and create server task
+loop = asyncio.get_event_loop()
+loop.create_task(app.serve())
+loop.run_forever()
+  </pre>
+  
+  <div>
+  
+    <div class="toolbar">
+      <label for="font-size">Fuente:</label>
+      <select class="font-size">
+        <option>12</option>
+        <option>14</option>
+        <option>16</option>
+        <option>18</option>
+        <option selected>20</option>
+        <option>24</option>
+        <option>28</option>
+        <option>32</option>
+        <option>36</option>
+        <option>40</option>
+      </select>
+    
+      <label for="theme">Tema:</label>
+      <select class="theme">
+        <option value="vs">Claro</option>
+        <option value="vs-dark" selected>Oscuro</option>
+        <option value="hc-black">Alto contraste</option>
+      </select>
+    
+      <span class="status-indicator"></span>
+      <button class="connect">Conectar</button>
+      <button class="send" disabled>▶ Ejecutar</button>
+      <button class="restart" disabled>Reiniciar</button>
+      <button class="toggle-video">Cámara</button>
+    </div>
+    
+    <div class="container">
+      <div class="editor"></div>
+      <div class="resizer"></div>
+      <div class="terminal"></div>
+    </div>
+
+  </div>
+  
+  <video controls class="micropython-demo-video">
+    <source src="demo7.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+<aside class="notes">En este último ejemplo no me voy a extender mucho. Inicializamos un access point, y un servidor web con soporte para
+websockets, el cual permite conectarnos al coche y controlarlo desde el navegador.</aside></section>
+<section  id="demo-coche">
+<h3>Demo <strong>coche</strong></h3>
+<aside class="notes">¡Ahora, vamos a ver el coche en acción!</aside></section>
+</section>
+<section >
+<section data-background-gradient="linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);" id="muchas-gracias-a-todos">
+<h2>¡Muchas gracias a todos!</h2>
+<aside class="notes">¡Y hasta aquí la presentación! Espero que hayáis disfrutado y aprendido algo nuevo. Sé que he ido muy rápido, pero
+si tenéis dudas, estoy disponible para resolverlas.</aside></section>
+</section>
+<section >
+<section  id="recursos">
+<h2>Recursos</h2>
+<ul class="simple">
+<li class="fragment"><p>🌐 <strong>Web oficial</strong>: <a class="reference external" href="https://micropython.org/">https://micropython.org/</a></p></li>
+<li class="fragment"><p>⚡ <strong>Instalación</strong>: TODO.</p></li>
+<li class="fragment"><p>📝 <strong>Editor online</strong>: <a class="reference external" href="https://viper-ide.org/">https://viper-ide.org/</a></p></li>
+<li class="fragment"><p>🥽 <strong>Simulador online</strong>: <a class="reference external" href="https://wokwi.com/">https://wokwi.com/</a></p></li>
+</ul>
+<aside class="notes">Os dejo aquí disponibles estos recursos, para empezar a trabajar con Micropython.</aside></section>
+</section>
+<section >
+<section data-background-color="#4973ff" data-transition-speed="slow" data-transition="fade" id="qr">
+<h2>QR</h2>
+<a class="reference internal image-reference" href="_images/qr.svg"><img alt="_images/qr.svg" src="_images/qr.svg" style="width: 60%;" />
+</a>
+<aside class="notes">Y por supuesto, también tenéis esta misma presentación, con los ejemplos de código y los diagramas.</aside></section>
+</section>
+<section >
+<section data-background-color="#4973ff" data-transition-speed="slow" data-transition="fade" id="python-malaga">
+<h2>Python <strong>Málaga</strong></h2>
+<ul class="simple">
+<li><p>🌐 <strong>Sitio web:</strong> <a class="reference external" href="https://www.python-malaga.es/">python-malaga.es</a>.</p></li>
+<li><p>🤝 <strong>Meetup:</strong> <a class="reference external" href="https://www.meetup.com/Python-Malaga/">meetup.com/Python-Malaga</a>.</p></li>
+<li><p>🐦 <strong>Twitter:</strong> <a class="reference external" href="https://twitter.com/python_malaga">&#64;python_malaga</a>.</p></li>
+<li><p>‍💼 <strong>LinkedIn:</strong> <a class="reference external" href="https://www.linkedin.com/groups/13110576/">linkedin.com/groups/13110576</a>.</p></li>
+<li><p>📱 <strong>Telegram:</strong> <a class="reference external" href="https://t.me/python_malaga">python_malaga</a>.</p></li>
+</ul>
+<aside class="notes">Y para más presentaciones, apuntaros a la comunidad de Python Málaga, donde hacemos más charlas como esta. No
+olvidéis seguirnos en nuestras redes sociales, y en nuestro grupo de Telegram.</aside></section>
+<section data-background-color="#333333" data-transition-speed="default" data-transition="fade" id="contactar">
+<h3><strong>Contactar</strong></h3>
+<ul class="simple">
+<li><p>🌐 <strong>Sitio web:</strong> <a class="reference external" href="https://nekmo.com">nekmo.com</a></p></li>
+<li><p>📫 <strong>Email:</strong> <a class="reference external" href="mailto:contacto&#37;&#52;&#48;nekmo&#46;com">contacto<span>&#64;</span>nekmo<span>&#46;</span>com</a></p></li>
+<li><p>🐦 <strong>Twitter:</strong> <a class="reference external" href="https://twitter.com/nekmocom">&#64;nekmocom</a></p></li>
+<li><p>📱 <strong>Telegram:</strong> <a class="reference external" href="https://t.me/nekmo">&#64;nekmo</a></p></li>
+<li><p>💡 <strong>Jabber:</strong> <a class="reference external" href="xmpp://nekmo&#64;nekmo.org">nekmo&#64;nekmo.org</a></p></li>
+</ul>
+<aside class="notes">A cualquier cosa, tenéis mi contacto disponible.</aside></section>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="_static/revealjs/dist/reveal.js"></script>
+    
+    
+      <script src="_static/revealjs/plugin/notes/notes.js"></script>
+      <script src="_static/revealjs/plugin/highlight/highlight.js"></script>
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, {"controls": true, "progress": true, "history": true, "center": true, "margin": 0.2, "transition": "slide", "scrollActivationWidth": null});
+        
+        
+        
+          revealjsConfig.plugins = [
+            RevealNotes,RevealHighlight,
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>
