@@ -573,10 +573,8 @@ Conectar un **led WS2812**
    PIN_NUM = 1
 
    leds = apa106.APA106(Pin(PIN_NUM), NUM_LEDS)
-   colors = [
-       (255, 0, 0), (0, 255, 0), (0, 0, 255)
-   ]
-   positions = [i % NUM_LEDS for i in range(NUM_LEDS)]
+   colors = [(255, 0, 0), (0, 255, 0), (0, 0, 255)]
+   positions = list(range(NUM_LEDS))
 
    while True:
        for i in range(NUM_LEDS):
@@ -641,16 +639,16 @@ Conectar **sensor** y **pantalla I2C**
    import ssd1306
    import sht4x
 
-   i2c = I2C(0, scl=Pin(12), sda=Pin(13))
+   i2c = I2C(0, scl=Pin(1), sda=Pin(2))
    print(i2c.scan())
    oled = ssd1306.SSD1306_I2C(128, 64, i2c, 0x3C)
-   sensor = sht4x.SHT4X(i2c, 0x22)
+   sensor = sht4x.SHT4X(i2c, 0x44)
 
    while True:
        temperature, humidity = sensor.measurements
        oled.fill(0)
-       oled.text("Temp: {:.1f} C".format(temperature), 0, 10)
-       oled.text("Hum:  {:.1f} %".format(humidity), 0, 30)
+       oled.text("Temp: {:.1f} C".format(temperature), 0, 0)
+       oled.text("Hum:  {:.1f} %".format(humidity), 0, 20)
        oled.show()
        sleep(2)
 

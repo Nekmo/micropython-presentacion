@@ -619,7 +619,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     const cameraFocus = document.getElementById("camera-focus");
     cameraFocus.addEventListener("change", async (e) => {
         const track = currentStream.getVideoTracks()[0];
-        await track.applyConstraints({ focusMode: "manual", advanced: [{ focusDistance: focusValue }] });
+        await track.applyConstraints({ focusMode: "manual", advanced: [{ focusDistance: parseInt(e.target.value) }] });
     });
 
     // Add event listeners for camera controls
