@@ -196,6 +196,38 @@ video::-webkit-media-controls {
   display: none;
 }
 
+// List
+.reveal.slide {
+  .slides {
+    ul {
+      padding-left: 0;
+      margin-left: 0;
+
+      ul {
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      li {
+        list-style: none;
+
+        p {
+          font-size: 120%;
+
+          a {
+            font-weight: bold;
+          }
+
+          strong {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+
+  }
+}
+
 
 // Theme template ------------------------------
 @import "./template.scss";
@@ -214,8 +246,8 @@ video::-webkit-media-controls {
 }
 
 .reveal pre code span, .reveal pre code table tr td {
-    font-family: monospace;
-   	text-transform: none;
+  font-family: monospace;
+  text-transform: none;
 }
 
 .reveal h2, .reveal h3, .reveal p {
@@ -225,15 +257,15 @@ video::-webkit-media-controls {
 }
 
 .reveal h1 {
-    font-size: 3.5em;
+  font-size: 3.5em;
 }
 
 .reveal h2 {
-    font-size: 3em;
+  font-size: 3em;
 }
 
 .reveal h3 {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .reveal .progress {
@@ -242,39 +274,32 @@ video::-webkit-media-controls {
 }
 
 ul li {
-    line-height: 2em;
+  line-height: 2em;
 }
 
 .has-dark-background {
-    h1, h2, h3 {
-        color: white;
-    }
+  h1, h2, h3 {
+    color: white;
+  }
 
-    ul, p {
-        color: #dedede;
-    }
+  ul, p {
+    color: #dedede;
+  }
 
-    strong {
-        color: white;
-    }
+  strong {
+    color: white;
+  }
 }
 
 .reveal section img {
-    border: 0;
-    box-shadow: 0 0;
+  border: 0;
+  box-shadow: 0 0;
   background: transparent;
 }
 
 .reveal pre code.hljs {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
-    padding: 15px;
-}
-
-/* Hidden titles */
-#pydata, #plytix, #qr, #python-malaga-pydata-malaga, #regalos, #aplausos-modulos-muertos-y-2to3 {
-  h1, h2, h3 {
-    display: none;
-  }
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  padding: 15px;
 }
 
 #python-malaga {
@@ -331,6 +356,18 @@ ul li {
   }
 }
 
+/* Circuit */
+section[data-background-color="#DDDDDD"] {
+  h1, h2, h3, h4 {
+    color: #8b8b8b;
+
+    strong {
+      color: #ffffff;
+      text-shadow: #000000 0 0 2px;
+    }
+  }
+}
+
 
 /* Slides with images without background */
 #intro, #opensouthcode, #sobre-mi-nekmo, #python {
@@ -340,44 +377,15 @@ ul li {
 }
 
 /* Slides without title */
-#codigo-qr, #muerte {
+#gif-robot, #gif-luces-led, #gif-recreativa, #gif-cientos-de-cables {
   h1, h2, h3, h4 {
     display: none;
   }
 }
 
-/* Quotes */
-#definicion, #definicion-2, #definicion-3, #quejas-sobre-el-nombre {
-  > p {
-    display: none;
-  }
-  blockquote {
-    p, a {
-      font-family: "Trocchi", serif;
-      font-weight: 400;
-      font-style: normal;
-    }
-
-    p:first-child {
-      text-align: left;
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-
-    p:nth-child(2) {
-      text-align: right;
-      width: 100%;
-
-      a {
-        margin-right: 30px;
-      }
-    }
-  }
-}
-
 /* Title with shadow */
-#mas-rapido, #gil, #un-solo-nucleo, #pelea-entre-hilos {
-  h2, h3 {
+#demos, #encender-un-led, #i2c {
+  h2, h3, h4 {
     text-shadow: #000000 1px 0 10px;
   }
 }
@@ -405,364 +413,86 @@ $blackComplementary: #FFD538;
   }
 }
 
-#id1 {
-  h2 {
-    font-size: 4em;
-  }
-}
-
 #sobre-mi-nekmo {
-    h2 {
-        width: 40%;
-        font-size: 2.5em;
-        display: inline-block;
-        vertical-align: top;
-        margin-top: 100px;
-        text-align: right;
-        line-height: 0.5em;;
-
-        strong {
-            font-size: 0.3em;
-            color: $secondaryColor;
-        }
-    }
-    table {
-        width: 40%;
-        display: inline-block;
-    }
-}
-
-#python-malaga {
   h2 {
-   // color: #005033;
-   // //-webkit-text-stroke: 1px #ffffff;
-   //text-shadow:
-   //    2px 2px 0 #fff,
-   //  -1px -1px 0 #fff,
-   //   1px -1px 0 #fff,
-   //   -1px 1px 0 #fff,
-   //    1px 1px 0 #fff;
-   // font-size: 3.3em;
+    width: 40%;
+    font-size: 2.5em;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 100px;
+    text-align: right;
+    line-height: 0.5em;;
+
+    strong {
+      font-size: 0.3em;
+      color: $secondaryColor;
+    }
   }
-  strong {
-    //color: #50066F;
-    color: $secondaryColor;
+  table {
+    width: 40%;
+    display: inline-block;
   }
 }
 
-#gil {
-  h3 {
+#algunos-usos {
+  ul {
+    font-size: 1.2em;
+  }
+}
+
+#demos {
+  font-size: 2em;
+
+  h1, h2, h3, h4 {
+    padding-top: 400px;
+  }
+}
+
+#conectar-un-boton, #conectar-un-led-rgb {
+  h1, h2, h3, h4 {
+    font-size: 2.6em;
+  }
+}
+
+#protocolos-de-comunicacion {
+  h1, h2, h3, h4 {
+    font-size: 2.5em;
+  }
+
+  ul {
+    font-size: 1.2em;
+  }
+}
+
+#conectar-un-led-ws2812 {
+  h1, h2, h3, h4 {
+    font-size: 2.5em;
+  }
+}
+
+#i2c {
+  h1, h2, h3, h4 {
     font-size: 6em;
   }
 }
 
-#pelea-entre-hilos {
-  h3 {
-    margin-top: 50vh;
-  }
-}
-
-#cuanto-mas-rapido-es {
-    h3 {
-        font-size: 2em;
-    }
-
-}
-
-#colores {
-  h3 {
-      background: linear-gradient(90deg, rgba(255,0,0,1) 20%, rgba(0,0,255,1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-  }
-}
-
-#copiar-y-pegar-mas-facil, #funciones-de-linea-de-comandos-sin-parentesis {
-  h3 {
-    font-size: 2em;
-  }
-}
-
-#copiar-y-pegar-mas-facil, #modo-ayuda, #funciones-de-linea-de-comandos-sin-parentesis {
-
-  em {
-    font-style: normal;
-    //vertical-align: middle;
-    background-color: var(--md-typeset-kbd-color);
-    border-radius: .1rem;
-    box-shadow: 0 .1rem 0 .05rem var(--md-typeset-kbd-border-color),0 .1rem 0 var(--md-typeset-kbd-border-color),0 -.1rem .2rem var(--md-typeset-kbd-accent-color) inset;
-    color: var(--md-default-fg-color);
-    display: inline-block;
-    font-size: .75em;
-    padding: 0 .6666666667em;
-    word-break: break-word;
-  }
-}
-
-#mejoras-en-la-linea-de-comandos {
-  h2 {
-    font-size: 2.4em;
-  }
-}
-
-#help-exit-y-quit-sin-parentesis {
-    h3 {
-      font-size: 2em;
-    }
-}
-
-.present {
-  #mejoras-en-la-linea-de-comandos {
-    h2 strong {
-      display: inline-block;
-      @include typewriter(17);
-      color: $secondaryColor;
-      font-style: normal;
-      font-weight: bold;
-      vertical-align: bottom;
-    }
-  }
-}
-
-#mejoras-en-mensajes-de-error {
-  h2 strong {
-    display: inline-block;
-  }
-}
-
-#nombres-de-modulo-ya-en-uso {
-  pre.code-wrapper {
-    font-size: 0.70em;
-  }
-}
-
-#nombre-de-parametro-equivocado {
-  h3 {
-    font-size: 2em;
-  }
-
-  pre.code-wrapper {
-    font-size: 0.75em;
-  }
-}
-
-#mejoras-en-typing, #pep-696-tipos-por-defecto-en-typevar-paramspec-y-typevartuple, #pep-702-decorador-warnings-deprecated,
-#pep-705-solo-lectura-en-typeddict, #pep-742-typeis, #pep-667-mejoras-en-locals {
-  strong {
-    color: $purpleComplementary;
-  }
-}
-
-#pep-696-tipos-por-defecto-en-typevar-paramspec-y-typevartuple {
-  h3 {
-    font-size: 1.7em;
-  }
-
-  pre.code-wrapper {
-    font-size: 0.70em;
-  }
-}
-
-#pep-702-decorador-warnings-deprecated {
-  h3 {
-    font-size: 2em;
-  }
-
-  pre.code-wrapper {
-    font-size: 0.65em;
-  }
-}
-
-#pep-705-solo-lectura-en-typeddict {
-  h3 {
+#conectar-sensor-y-pantalla-i2c {
+  h1, h2, h3, h4 {
     font-size: 2.2em;
   }
-
-  pre.code-wrapper {
-    font-size: 0.75em;
-  }
 }
 
-#pep-742-typeis {
-  pre.code-wrapper {
-    font-size: 0.80em;
-  }
-}
-
-#pep-667-mejoras-en-locals {
-  h2 {
-      font-size: 2.4em;
-  }
-
-  pre.code-wrapper {
-    font-size: 0.75em;
-  }
-}
-
-#otros-cambios {
-  h2 {
-    font-size: 2.4em;
+#wifi-y-bluetooth {
+  h1, h2, h3, h4 {
+    color: #ffffff;;
+    font-size: 3.2em;
   }
 }
 
 #qr {
   img {
-      background: #ffffff;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
-  }
-}
-
-#python-3-11  {
-    h2 {
-      color: $linkColor;
-      font-family: "Flux Regular";
-      text-transform: none;
-      font-size: 4em;
-    }
-}
-
-#python-3-13 {
-  strong {
-    font-size: 12em;
-  }
-}
-
-#angular-django {
-  height: 100%;
-  width: 100%;
-  background: url(./heart.svg) center no-repeat;
-  background-size: contain;
-
-  //padding-top: 100px;
-
-  img {
-    margin: 0;
-  }
-
-  > a:nth-child(2) {
-    margin-top: 150px;
-    display: block;
-  }
-
-  p {
-    font-size: 2em;
-    margin: 0;
-    color: #ffffff;
-  }
-
-}
-
-#ventajas-python {
-  strong {
-    color: $secondaryColor;
-  }
-
-  p {
-    font-size: 1.4em;
-  }
-}
-
-
-
-
-#filosofia-comun {
-  h2 {
-    font-size: 4.5em;
-  }
-}
-
-#el-framework-web-para-perfeccionistas-con-plazos-de-entrega {
-  h3, strong {
-    font-family: 'Kalam', cursive;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
-  }
-}
-
-#caracteristicas {
-  p {
-    font-size: 1.2em;
-  }
-}
-
-#orm {
-  h3 {
-    color: $purpleComplementary;
-    font-size: 3.5em;
-  }
-
-  pre.code-wrapper {
-    font-size: 0.7em;
-  }
-}
-
-#como-pueden-trabajar-juntos {
-  h2 {
-    color: #ffffff;
-  }
-}
-
-#proxy-conf-json {
-    pre.code-wrapper {
-        font-size: 0.9em;
-    }
-}
-
-#id2 {
-  p {
-    font-size: 1.1em;
-  }
-}
-
-#como-se-divide {
-  p {
-    font-size: 1.5em;
-  }
-}
-
-#serializers {
-  pre.code-wrapper {
-    font-size: 0.65em;
-  }
-}
-
-#serializer-personalizado {
-  pre.code-wrapper {
-    font-size: 0.6em;
-  }
-}
-
-#viewsets {
-    pre.code-wrapper {
-        font-size: 0.65em;
-    }
-}
-
-#routers {
-    pre.code-wrapper {
-        font-size: 0.7em;
-    }
-}
-
-#interfaces-en-angular, #servicios-de-angular {
-  pre.code-wrapper {
-    font-size: 0.8em;
-  }
-}
-
-#id3, #angular-django-forms, #angular-django-tables, #donde-se-encuentra {
-  h2, h3 {
-      color: #ffffff;
-  }
-
-  h3 {
-    font-size: 2em;
-  }
-}
-
-#demo {
-  h3 {
-    font-size: 3em;
-    text-shadow: #000000 1px 0 20px;
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
   }
 }
 
