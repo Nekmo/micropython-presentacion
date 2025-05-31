@@ -46,6 +46,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
     });
 
 
+    /* Add waves to the slides */
+    var starBg = document.querySelectorAll("[data-background-hash='0#333333nullnullnullnullnull']");
+    for (var i = 0; i < starBg.length; i++) {
+        console.log(starBg[i]);
+        addDiv(starBg[i], "waves");
+    }
+
+    /* Add bubbles to the slides */
+    var starBg = document.querySelectorAll("[data-background-hash='0#4973ffnullnullnullnullnull']");
+    for (var i = 0; i < starBg.length; i++) {
+        console.log(starBg[i]);
+        var div = addDiv(starBg[i], "bubbles");
+        for (var j = 0; j < 50; j++) {
+            addDiv(div, "bubble");
+        }
+    }
+
     // Reveal.on('slidechanged', (event) => {
     //     // event.previousSlide, event.currentSlide, event.indexh, event.indexv
     //     playAsciinema(event.currentSlide);
@@ -59,22 +76,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     //     }
     // });
     //
-    // /* Add waves to the slides */
-    // var starBg = document.querySelectorAll("[data-background-hash='0#333333nullnullnullnullnull']");
-    // for (var i = 0; i < starBg.length; i++) {
-    //     console.log(starBg[i]);
-    //     addDiv(starBg[i], "waves");
-    // }
     //
-    // /* Add bubbles to the slides */
-    // var starBg = document.querySelectorAll("[data-background-hash='0#4973ffnullnullnullnullnull']");
-    // for (var i = 0; i < starBg.length; i++) {
-    //     console.log(starBg[i]);
-    //     var div = addDiv(starBg[i], "bubbles");
-    //     for (var j = 0; j < 50; j++) {
-    //         addDiv(div, "bubble");
-    //     }
-    // }
     //
     // /* Add boxes to the slides */
     // var starBg = document.querySelectorAll("[data-background-hash='0#4e54c8nullnullnullnullnull']");

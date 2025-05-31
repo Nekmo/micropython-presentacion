@@ -816,6 +816,14 @@ Conectar **sensor** y **pantalla I2C**
 Demo **coche**
 --------------
 
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+.. raw:: html
+
+    <iframe src="http://192.168.4.1/" height="600px" width="100%" style="border: 0;"></iframe>
+
+
 .. revealjs-notes::
 
    ¡Ahora, vamos a ver el coche en acción!
@@ -837,6 +845,11 @@ Demo **coche**
 
 Recursos
 ========
+
+.. revealjs-section::
+    :data-background-color: #333333
+    :data-transition-speed: default
+    :data-transition: fade
 
 .. revealjs-fragments::
 
