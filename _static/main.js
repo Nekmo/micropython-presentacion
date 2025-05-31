@@ -451,10 +451,18 @@ async function startCameraWithDevice(deviceId) {
         video.srcObject = null;
     }
 
-    try {
-        const stream = await navigator.mediaDevices.getUserMedia({
+    let constraints;
+    if (deviceId) {
+        constraints = {
             video: { deviceId: { exact: deviceId } }
-        });
+        }
+    } else {
+        constraints = {
+            video: true
+        };
+    }
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
         currentStream = stream;
         video.srcObject = stream;
         box.style.display = "block";
@@ -529,6 +537,7 @@ async function startCameraWithDevice(deviceId) {
             }
         }
     } catch (e) {
+        console.error(e);
         alert("No se pudo acceder a la cámara: " + e.message);
     }
 }
