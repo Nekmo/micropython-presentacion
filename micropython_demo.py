@@ -47,7 +47,7 @@ HTML = '''
 
   </div>
   
-  <video controls class="micropython-demo-video">
+  <video controls class="micropython-demo-video" loop autoplay style="display: none;">
     <source src="{video_path}" type="video/mp4">
     Your browser does not support the video tag.
   </video>

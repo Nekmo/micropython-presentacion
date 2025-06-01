@@ -311,7 +311,7 @@ Código **led**
     :data-background-color: #090a0f
 
 .. micropython-demo::
-   :video: demo1.mp4
+   :video: _static/demo1.mp4
 
    from machine import Pin
    from time import sleep
@@ -339,7 +339,7 @@ Led **analógico**
     :data-background-color: #090a0f
 
 .. micropython-demo::
-   :video: demo2.mp4
+   :video: _static/demo2.mp4
 
    from machine import Pin, PWM
    from time import sleep
@@ -403,7 +403,7 @@ Conectar **un botón**
     :data-background-color: #090a0f
 
 .. micropython-demo::
-   :video: demo3.mp4
+   :video: _static/demo3.mp4
 
    from machine import Pin
    from time import sleep
@@ -465,7 +465,7 @@ Conectar un **LED RGB**
     :data-background-color: #090a0f
 
 .. micropython-demo::
-   :video: demo4.mp4
+   :video: _static/demo4.mp4
 
    from machine import Pin, PWM
    from time import sleep
@@ -563,7 +563,7 @@ Conectar un **led WS2812**
     :data-background-color: #090a0f
 
 .. micropython-demo::
-   :video: demo5.mp4
+   :video: _static/demo5.mp4
 
    import apa106
    from machine import Pin
@@ -636,7 +636,7 @@ Conectar **sensor** y **pantalla I2C**
     :data-background-color: #090a0f
 
 .. micropython-demo::
-   :video: demo6.mp4
+   :video: _static/demo6.mp4
 
    from machine import Pin, I2C
    from time import sleep
@@ -688,7 +688,7 @@ Conectar **sensor** y **pantalla I2C**
     :data-background-color: #000303
 
 .. micropython-demo::
-    :video: demo7.mp4
+    :video: _static/demo7.mp4
 
     import json
     import time

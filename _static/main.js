@@ -583,6 +583,7 @@ function applyDemoVideo(currentSlide) {
     if (micropythonDemoVideo) {
         const cameraBox = document.getElementById("camera-box");
         const clonedMicropythonDemoVideo = micropythonDemoVideo.cloneNode(true);
+        clonedMicropythonDemoVideo.style.display = "block";
         const lastMicropythonDemoVideo = cameraBox.querySelector(".micropython-demo-video");
         if (lastMicropythonDemoVideo) {
             lastMicropythonDemoVideo.remove();
