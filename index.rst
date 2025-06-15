@@ -43,12 +43,45 @@ Sobre mí **Nekmo**
 
 .. revealjs-notes::
 
-   Soy Juan José, trabajo en Plytix aquí en Málaga, y me conocen mejor en redes como Nekmo por otras charlas para
-   Python Málaga, aunque el día de hoy hablaré de un tema un poco diferente al habitual.
+   Soy Juan José, aunque me conocen mejor en redes como Nekmo, y puede que me conozcáis por charlas anteriores para Python Málaga
+
+
+Otras charlas...
+================
+
+.. image:: images/talks1.jpg
+   :width: 32%
+   :align: center
+
+.. image:: images/talks2.jpg
+   :width: 32%
+   :align: center
+
+----------
+
+.. image:: images/python-malaga-logo-white.png
+   :width: 10%
+   :align: center
+
+.. image:: images/plytix-logo-white.svg
+   :width: 35%
+   :align: center
+
+.. revealjs-section::
+    :data-background-color: #090a0f
+
+.. revealjs-notes::
+
+   Como la última que tuvimos en Plytix, la empresa para la que trabajo, y que podéis encontrar disponible online.
+   Pero en esta ocasión, tendremos una charla un tanto diferente, aquí en OpenSouthCode...
 
 
 Micropython
 ===========
+
+.. image:: images/micropython-logo.svg
+   :width: 35%
+   :align: center
 
 .. revealjs-section::
     :data-background-color: #090a0f
@@ -64,7 +97,8 @@ Microcontroladores
 ==================
 
 .. revealjs-section::
-    :data-background-color: #090a0f
+    :data-background-color: #000000
+    :data-background-image: _static/microcontrollers_background.png
 
 .. revealjs-notes::
 
@@ -132,6 +166,10 @@ GIF robot
 Micropython
 ===========
 
+.. image:: images/micropython-logo.svg
+   :width: 35%
+   :align: center
+
 .. revealjs-section::
     :data-background-color: #090a0f
 
@@ -174,7 +212,8 @@ ESP32
 =====
 
 .. revealjs-section::
-    :data-background-color: #090a0f
+    :data-background-color: #000000
+    :data-background-image: _static/esp32_background.jpg
 
 .. revealjs-notes::
 
@@ -218,18 +257,17 @@ Características
 
 
 
-Primeros pasos
---------------
+**Primeros** pasos
+------------------
 
 .. revealjs-section::
     :data-background-color: #090a0f
 
 .. revealjs-fragments::
 
-    * ⚡ **Flashear desde el navegador** o por terminal
+    * ⚡ **Flashear** siguiendo la web de `Micropython <https://micropython.org/>`_
     * 📝 **IDE web** *(ViperIDE)* o local *(Thonny)*
 
-TODO: instalador de micropython en presentación
 
 .. revealjs-notes::
 
@@ -830,6 +868,23 @@ Demo **coche**
 
 
 
+¡Pruébalo tú mismo!
+-------------------
+
+.. revealjs-section::
+   :data-background-color: #DDDDDD
+
+* **SSID:** roverc.pro
+* **Password:** roverc.pro
+* **Url:** http://192.168.4.1
+
+
+.. revealjs-notes::
+
+   Y ahora, ¡podéis probarlo vosotros mismos! Conectad vuestro móvil al wifi del coche, y acceded a la dirección
+   indicada.
+
+
 ¡Muchas gracias a todos!
 ========================
 
@@ -838,7 +893,7 @@ Demo **coche**
 
 .. revealjs-notes::
 
-    ¡Y hasta aquí la presentación! Espero que hayáis disfrutado y aprendido algo nuevo. Sé que he ido muy rápido, pero
+    Y mientras os dejo jugando con el coche... ¡Hasta aquí la presentación! Espero que hayáis disfrutado y aprendido algo nuevo. Sé que he ido muy rápido, pero
     si tenéis dudas, estoy disponible para resolverlas.
 
 
@@ -853,10 +908,9 @@ Recursos
 
 .. revealjs-fragments::
 
-    * 🌐 **Web oficial**: https://micropython.org/
-    * ⚡ **Instalación**: TODO.
-    * 📝 **Editor online**: https://viper-ide.org/
-    * 🥽 **Simulador online**: https://wokwi.com/
+    * 🌐 **Web oficial**: https://micropython.org
+    * 📝 **Editor online**: https://viper-ide.org
+    * 🥽 **Simulador online**: https://wokwi.com
 
 .. revealjs-notes::
 

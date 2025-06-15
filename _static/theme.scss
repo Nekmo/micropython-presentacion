@@ -377,14 +377,14 @@ section[data-background-color="#DDDDDD"] {
 }
 
 /* Slides without title */
-#gif-robot, #gif-luces-led, #gif-recreativa, #gif-cientos-de-cables {
+#gif-robot, #dinero, #gif-luces-led, #gif-recreativa, #gif-cientos-de-cables {
   h1, h2, h3, h4 {
     display: none;
   }
 }
 
 /* Title with shadow */
-#demos, #encender-un-led, #i2c {
+#microcontroladores, #esp32, #demos, #encender-un-led, #i2c {
   h2, h3, h4 {
     text-shadow: #000000 1px 0 10px;
   }
@@ -434,9 +434,39 @@ $blackComplementary: #FFD538;
   }
 }
 
+#otras-charlas {
+  h2, h3, h4 {
+    font-size: 2em;
+  }
+}
+
+#microcontroladores {
+  h1, h2, h3, h4 {
+    font-size: 2.45em;
+    text-shadow: #000000 5px 10px 10px;
+  }
+}
+
 #algunos-usos {
   ul {
     font-size: 1.2em;
+  }
+}
+
+#variantes {
+  li {
+    font-size: 0.95em;
+  }
+
+  > ul > li {
+    padding-bottom: 5px;
+  }
+}
+
+#esp32 {
+  h1, h2, h3, h4 {
+    font-size: 6em;
+    text-shadow: #000000 20px 0 20px;
   }
 }
 
@@ -492,6 +522,29 @@ $blackComplementary: #FFD538;
   h1, h2, h3, h4 {
     color: #ffffff;;
     font-size: 3.2em;
+  }
+}
+
+#pruebalo-tu-mismo {
+  ul {
+    font-size: 1.2em;
+    color: #8B8B8B;
+    font-weight: bold;
+
+    a {
+      color: #8B8B8B;
+    }
+  }
+
+  strong {
+    color: #F2F2F2;
+    text-shadow: #8B8B8B 1px 0 10px;
+  }
+}
+
+#recursos {
+  a {
+    color: #ffffff;
   }
 }
 
