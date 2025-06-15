@@ -43,7 +43,7 @@ Sobre mí **Nekmo**
 
 .. revealjs-notes::
 
-   Soy Juan José, aunque me conocen mejor en redes como Nekmo, y puede que me conozcáis por charlas anteriores para Python Málaga
+   Soy Juan José, aunque muchos me conocen en redes como Nekmo, y puede que me conozcáis por charlas anteriores para Python Málaga
 
 
 Otras charlas...
@@ -161,6 +161,9 @@ GIF robot
     :data-background-video-loop: true
     :data-background-size: cover
 
+.. revealjs-notes::
+
+   Gracias a ellos, podréis competir contra Boston Dynamics en robótica, y conseguir imágenes graciosas como esta.
 
 
 Micropython
@@ -204,7 +207,7 @@ Variantes
 
 .. revealjs-notes::
 
-   Entre los microcontroladores que soportan Micropython podemos destacar los ESP8266 y ESP32 [...] o la Raspberry Pi Pico [...], aunque hay muchos más.
+   Entre los microcontroladores que soportan Micropython podemos destacar los ESP8266 y ESP32 [...] o la Raspberry Pi Pico [...], u otros más caros como la PyBoard, la oficial de Miccropython.
 
 
 
@@ -217,7 +220,7 @@ ESP32
 
 .. revealjs-notes::
 
-   En estas demostraciones vamos a utilizar un ESP32, porque sencillamente...
+   Pero en esta presentación vamos a utilizar un ESP32, porque sencillamente...
 
 
 
@@ -232,7 +235,7 @@ Dinero
 
 .. revealjs-notes::
 
-   ... la pela es la pela. Y aquí no estoy para gastar mucho dinero.
+   ... la pela es la pela. Y es que son los más económicos.
 
 
 
@@ -271,10 +274,8 @@ Características
 
 .. revealjs-notes::
 
-   Y empezar con Micropython es tan sencillo, que ni siquiera necesitáis instalar nada. Podéis flashearlo directamente
-   desde el navegador, con el instalador de esta misma presentación y desarrollada por mí, o bien utilizar las
-   instrucciones del sitio oficial de Micropython. Tras ello, podéis usar un IDE web como Viper IDE, o un IDE local como
-   Thonny.
+   Y empezar con Micropython es muy sencillo. Sólo tenéis que descargar el binario del sitio web oficial, y flashearlo
+   mediante la herramienta indicado. Tras ello, podéis usar un IDE web como Viper IDE, o un IDE local como Thonny.
 
 
 
@@ -319,9 +320,9 @@ Identificar **los pines**
 
 .. revealjs-notes::
 
-   Antes de empezar en cualquier ejemplo, es imprescindible identificar los pines de nuestro controlador. Buscad vuestro
-   modelo y encontraréis un datasheet como este. Los pines GPIO, que suelen empezar por G o algo similar, son los que
-   nos interesan.
+   Aunque antes de empezar cualquier circuito, es imprescindible identificar los pines de nuestro controlador. Buscad
+   vuestro modelo y encontraréis un datasheet como este. Los pines GPIO, que suelen empezar por G o algo similar, son
+   los que nos interesan.
 
 
 **Conectar** el led
@@ -364,7 +365,7 @@ Código **led**
 
 .. revealjs-notes::
 
-   El código fuente es muy sencillo. En este ejemplo, haremos encender y apagarse el led en tiempos de medio segundo.
+   El código fuente es tal que así. En este ejemplo, haremos encender y apagarse el led en tiempos de medio segundo.
    Como podéis observar, el código es muy similar al Python de siempre, donde utilizamos la librería de GPIO para
    definir qué pin, en este caso el GPIO 1, es el que queremos utilizar. Luego, lo inicializamos como salida. Tendremos
    así una salida digital, es decir, binaria, que puede ser 0 o 1.
@@ -395,7 +396,8 @@ Led **analógico**
 .. revealjs-notes::
 
    El ejemplo anterior funcionaba de forma digital. Es decir, que el led sólo podía encenderse y apagarse. Pero si
-   utilizamos una salida analógica, podemos entregar más valores, entre 0 y 1024, para así variar la intensidad del led.
+   utilizamos una salida analógica, indicada como PWM, podemos entregar más valores, entre 0 y 1024, para así variar
+   la intensidad del led.
 
 
 
@@ -410,7 +412,7 @@ GIF luces LED
 
 .. revealjs-notes::
 
-   Ahora, ya sabéis cómo llenar vuestra casa de lucecitas LED.
+   Y ahora, ya sabéis cómo llenar vuestra casa de lucecitas LED.
 
 
 
@@ -429,8 +431,8 @@ Conectar **un botón**
 
    No sólo podemos entregar valores de salida. También podemos leer valores de entrada, como es el caso de un botón.
    La conexión es igualmente sencilla, pero no utilizaremos una resistencia, ya que el propio microcontrolador tiene una
-   resistencia pull-up interna. Esto significa que el pin GPIO estará en estado alto, es decir, 1, y cuando se presione
-   el botón, pasará a estado bajo, es decir, 0.
+   resistencia pull-up interna. Si queréis más detalles al respecto, me podéis preguntar al finalizar la charla. Y así
+   ya os dejo una pregunta para el final.
 
 
 
@@ -566,7 +568,7 @@ GIF cientos de cables
 
 .. revealjs-notes::
 
-   Para ello tenemos diferentes protocolos de comunicación, que suelen variar en el número de pines, en su velocidad,
+   Disponemos de diferentes protocolos de comunicación, que suelen variar en el número de pines, en su velocidad,
    su uso, etc. Por ejemplo, oneWire sólo llega a necesitar un pin, pero es muy lento. I2C sólo necesita 2 pines, siendo
    muy popular. SPI parte de 3 a 4 pines, pudiendo requerir más si tenemos varios dispositivos. UART, que algunos
    recordaréis de los serial bus, parte de 2 pines... y así podríamos continuar. También tenemos protocolos específicos
@@ -662,7 +664,7 @@ Conectar **sensor** y **pantalla I2C**
    Vamos a conectar tanto la pantalla como un sensor de temperatura a un mismo I2C, el cual utiliza 2 pines, SDA y SCL.
    Necesitaremos además una tierra y una alimentación. Cada dispositivo I2C tiene una dirección única, la cual debemos
    conocer para comunicarnos con él. No obstante, podemos utilizar el escáner I2C para conocer la dirección de nuestros
-   dispositivos. En este caso, la pantalla es una OLED de 128x64 píxeles, y el sensor un SHT40 para medir la temperatura
+   dispositivos. En este caso, la pantalla es una OLED de 128x64 píxeles, y el sensor un SHT41 para medir la temperatura
    y humedad.
 
 
@@ -698,7 +700,7 @@ Conectar **sensor** y **pantalla I2C**
 
    Para este código, hemos tenido que instalar 2 módulos adicionales, para lo cual podéis usar upip, el gestor de
    paquetes de Micropython. Hemos instalado el módulo ssd1306 para la pantalla, y el módulo sht4x para el sensor.
-   Tenemos como direcciones para los dispositivos la 0x3C para la pantalla y la 0x22 para el sensor.
+   Tenemos como direcciones para los dispositivos la 0x3C para la pantalla y la 0x44 para el sensor.
 
 
 
@@ -881,8 +883,8 @@ Demo **coche**
 
 .. revealjs-notes::
 
-   Y ahora, ¡podéis probarlo vosotros mismos! Conectad vuestro móvil al wifi del coche, y acceded a la dirección
-   indicada.
+   Y por si os sabe a poco, ¡os invito a probarlo vosotros mismos! Conectad vuestro móvil al wifi del coche, y acceded a
+   la dirección indicada.
 
 
 ¡Muchas gracias a todos!
@@ -893,8 +895,8 @@ Demo **coche**
 
 .. revealjs-notes::
 
-    Y mientras os dejo jugando con el coche... ¡Hasta aquí la presentación! Espero que hayáis disfrutado y aprendido algo nuevo. Sé que he ido muy rápido, pero
-    si tenéis dudas, estoy disponible para resolverlas.
+    Y mientras os dejo jugando con el coche... ¡Hasta aquí la presentación! Espero que hayáis disfrutado y aprendido
+    algo nuevo. Sé que he ido muy rápido, pero si tenéis dudas, estoy disponible para resolverlas.
 
 
 
