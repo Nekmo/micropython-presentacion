@@ -8,9 +8,9 @@
   :alt: Latest CI build status
 
 
-========================================================================
-(WIP) Micropython: programación fácil y para todos de microcontroladores
-========================================================================
+==================================================================
+Micropython: programación fácil y para todos de microcontroladores
+==================================================================
 Hasta hace no mucho, para programar microcontroladores requeríamos utilizar variantes de lenguajes como C/C++, quedando
 fuera de nuestro alcance lenguajes populares y sencillos como Python. No obstante, los nuevos microcontroladores como
 ESP32 o Raspberry Pi Pico, más potentes y con mayores recursos, han abierto la puerta a variantes de estos lenguajes,
@@ -19,7 +19,7 @@ comunicación, instalación de paquetes, limitaciones y más. Se recomienda disp
 aunque no es esencial. Si no conoces el mundo de los microcontroladores, ¡esta es tu charla! Micropython es una de las
 formas más fáciles, cómodas, rápidas y divertidas de adentrarse.
 
-La presentación está `disponible online <https://nekmo.github.io/micropython-presentacion/>`_ (WIP) ya compilada
+La presentación está `disponible online <https://nekmo.github.io/micropython-presentacion/>`_ ya compilada
 para su visualización.
 
 
