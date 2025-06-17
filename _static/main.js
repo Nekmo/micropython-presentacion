@@ -715,3 +715,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
         });
     });
 });
+
+document.addEventListener("keyup", function(event) {
+    if (event.key === 't' || event.key === 'T') {
+        const cameraBox = document.getElementById("camera-box");
+        if (cameraBox.classList.contains("full-screen")) {
+            cameraBox.classList.remove("full-screen");
+        } else {
+            cameraBox.classList.add("full-screen");
+        }
+    }
+});

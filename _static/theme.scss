@@ -160,6 +160,15 @@ section.has-light-background {
   transition: opacity 0.3s ease;
 }
 
+#camera-box.full-screen {
+  left: 1rem !important;
+  width: auto !important;
+  right: 1rem !important;
+  height: auto !important;
+  bottom: 1rem !important;
+  top: 1rem !important;
+}
+
 #camera-box.hidden {
   opacity: 0;
   display: none;
