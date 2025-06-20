@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Micropython: programación fácil y para todos de microcontroladores</title>
+    <link rel="stylesheet" type="text/css" href="_static/revealjs/dist/reveal.css?v=d4488b42" />
+    <link rel="stylesheet" href="_static/revealjs/dist/theme/.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme.css?v=4419f92b" />
+    <script src="_static/main.js?v=dd9c77c2"></script>
+    <link rel="prev" title="Micropython" href="index.html" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <a class="reference internal image-reference" href="https://raw.githubusercontent.com/Nekmo/micropython-presentacion/master/logo.png"><img alt="https://raw.githubusercontent.com/Nekmo/micropython-presentacion/master/logo.png" src="https://raw.githubusercontent.com/Nekmo/micropython-presentacion/master/logo.png" style="width: 100%;" />
+</a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference external image-reference" href="https://github.com/Nekmo/micropython-presentacion/actions?query=workflow%3ABuild"><img alt="Latest CI build status" src="https://img.shields.io/github/actions/workflow/status/Nekmo/micropython-presentacion/build.yml?style=flat-square&amp;branch=master" />
+</a>
+<section >
+<section  id="micropython-programacion-facil-y-para-todos-de-microcontroladores">
+<h1>Micropython: programación fácil y para todos de microcontroladores</h1>
+<p>Hasta hace no mucho, para programar microcontroladores requeríamos utilizar variantes de lenguajes como C/C++, quedando
+fuera de nuestro alcance lenguajes populares y sencillos como Python. No obstante, los nuevos microcontroladores como
+ESP32 o Raspberry Pi Pico, más potentes y con mayores recursos, han abierto la puerta a variantes de estos lenguajes,
+como es el caso de Micropython. Veremos los primeros pasos, ejemplos prácticos como control de leds, formas de
+comunicación, instalación de paquetes, limitaciones y más. Se recomienda disponer de conocimientos previos de Python,
+aunque no es esencial. Si no conoces el mundo de los microcontroladores, ¡esta es tu charla! Micropython es una de las
+formas más fáciles, cómodas, rápidas y divertidas de adentrarse.</p>
+<p>La presentación está <a class="reference external" href="https://nekmo.github.io/micropython-presentacion/">disponible online</a> ya compilada
+para su visualización.</p>
+</section>
+</section>
+<section >
+<section  id="requisitos-y-contenido">
+<h2>Requisitos y contenido</h2>
+<p>No es necesarios conocimientos previos de microcontroladores, pero sí es recomendable conocer Python, ya que habrán
+ejemplos prácticos utilizando este lenguaje de programación, en su variante Micropython. Esta versión es compatible con
+las versiones estándar de Python, aunque con limitaciones. La presentación se divide en:</p>
+<ul class="simple">
+<li><p>Bienvenida e introducción.</p></li>
+<li><p>Qué son y para qué se usan los microcontroladores.</p></li>
+<li><p>Variantes y características, centrado en ESP32.</p></li>
+<li><p>Los conectores GPIO y esquema de un microcontrolador.</p></li>
+<li><p>Esquema, código y demostración de encender un LED.</p></li>
+<li><p>Código y demostración de uso analógico de un LED.</p></li>
+<li><p>Esquema, código y demostración de uso de un botón.</p></li>
+<li><p>Esquema, código y demostración de conectar un led RGB.</p></li>
+<li><p>Protocolos de comunicación.</p></li>
+<li><p>Esquema, código y demostración de un led WS2812.</p></li>
+<li><p>Esquema, código y demostración de un sensor y pantalla I2C.</p></li>
+<li><p>Código y demostración de un coche.</p></li>
+<li><p>Punto final a la presentación.</p></li>
+<li><p>Agradecimientos asociaciones, colaboradores y público.</p></li>
+<li><p>Formas de contacto.</p></li>
+<li><p>Turno de preguntas.</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="motivacion">
+<h2>Motivación</h2>
+<p>Ser un punto de introducción a los microcontroladores y a Micropython, sin necesidad de conocer ninguno de los dos.
+Aunque será imposible conocerlos en detalle en tan solo 45 minutos, se verán los casos más sencillos como luces LED o
+interruptores, y algunos más complejos como sensores y protocolos de comunicación. No será posible detenerse mucho
+tiempo en cada ejemplo, pero el código y las demostraciones seguirán disponibles en esta presentación.</p>
+</section>
+</section>
+<section >
+<section  id="acerca-de">
+<h2>Acerca de</h2>
+<p>La presente charla ha sido realizada para <a class="reference external" href="https://www.python-malaga.es/">Python Málaga</a>, con fecha de presentación
+el 20-21 de junio de 2025 en <a class="reference external" href="https://www.opensouthcode.org/">OpenSouthCode</a>.</p>
+</section>
+</section>
+<section >
+<section  id="compilacion">
+<h2>Compilación</h2>
+<p>Para compilar desde el código fuente se requiere Python 3 instalado, estando probado sólo bajo Python 3.12. Se
+recomienda ejecutar los siguientes pasos en un
+<a class="reference external" href="https://nekmo.com/es/blog/python-virtualenvs-y-virtualenvwrapper/">virtualenv</a>:</p>
+<pre data-id="compilacion"><code data-trim data-noescape class="default"># Clonar proyecto
+git clone https://github.com/Nekmo/micropython-presentacion.git
+cd micropython-presentacion
+# Instalar dependencias
+pip install -r requirements.txt
+# Compilar ficheros de estilos
+sassc _static/theme.scss _static/theme.css
+# Compilar presentación
+make revealjs</code></pre>
+<p>Tras la compilación puede verse los ficheros resultantes en el directorio <code class="docutils literal notranslate"><span class="pre">_build</span></code>.</p>
+</section>
+<section  id="copyright">
+<h3>Copyright</h3>
+<p>Licencia MIT. Ver fichero <code class="docutils literal notranslate"><span class="pre">LICENSE.txt</span></code>.</p>
+<p>Nekmo 2025.</p>
+</section>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="_static/revealjs/dist/reveal.js"></script>
+    
+    
+      <script src="_static/revealjs/plugin/notes/notes.js"></script>
+      <script src="_static/revealjs/plugin/highlight/highlight.js"></script>
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, {"controls": true, "progress": true, "history": true, "center": true, "margin": 0.2, "transition": "slide", "scrollActivationWidth": null});
+        
+        
+        
+          revealjsConfig.plugins = [
+            RevealNotes,RevealHighlight,
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Demo 3</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/revealjs/dist/reveal.css?v=d4488b42" />
+    <link rel="stylesheet" href="../../_static/revealjs/dist/theme/.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=4419f92b" />
+    <script src="../../_static/main.js?v=dd9c77c2"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <section >
+<section  id="demo-3">
+<h1>Demo 3</h1>
+<p>En esta demo se detecta la pulsación de un botón, mostrándose por consola el estado del mismo.</p>
+<p>Debes modificar el número de PIN al que estés utilizando en tu microcontrolador, si fuese necesario.</p>
+<pre data-id="demo-3"><code data-trim data-noescape class="python">button = Pin(1, Pin.IN, Pin.PULL_UP)</code></pre>
+<p>El uso de la resistencia pull-up evita que el PIN quede flotante cuando el botón no está pulsado, lo que podría generar
+lecturas erróneas. Ésta es una resistencia interna del microcontrolador, por lo que no es necesario añadir una
+resistencia externa.</p>
+</section>
+</section>
+<section >
+<section  id="componentes">
+<h2>Componentes</h2>
+<ul class="simple">
+<li><p>Microcontrolador compatible con Micropython, como ESP32 o Raspberry Pi Pico.</p></li>
+<li><p>Botón.</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="instalacion">
+<h2>Instalación</h2>
+<ul class="simple">
+<li><p>Identifica el número de PIN al que vas a conectar el LED en tu microcontrolador, usando el esquema proporcionado por
+el fabricante.</p></li>
+<li><p>Conecta un terminal del botón al PIN seleccionado y el otro terminal a tierra (GND). No es necesario añadir una
+resistencia, ya que el microcontrolador cuenta con una resistencia pull-up interna.</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="simulacion">
+<h2>Simulación</h2>
+<p><a class="reference external" href="https://wokwi.com/projects/430963109299119105">https://wokwi.com/projects/430963109299119105</a></p>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="../../_static/revealjs/dist/reveal.js"></script>
+    
+    
+      <script src="../../_static/revealjs/plugin/notes/notes.js"></script>
+      <script src="../../_static/revealjs/plugin/highlight/highlight.js"></script>
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, {"controls": true, "progress": true, "history": true, "center": true, "margin": 0.2, "transition": "slide", "scrollActivationWidth": null});
+        
+        
+        
+          revealjsConfig.plugins = [
+            RevealNotes,RevealHighlight,
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>

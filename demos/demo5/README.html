@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Demo 5</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/revealjs/dist/reveal.css?v=d4488b42" />
+    <link rel="stylesheet" href="../../_static/revealjs/dist/theme/.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=4419f92b" />
+    <script src="../../_static/main.js?v=dd9c77c2"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <section >
+<section  id="demo-5">
+<h1>Demo 5</h1>
+<p>En esta demo se encienden tres LEDs APA106 (también conocidos como WS2812B), necesitando tan solo 1 cable de datos
+para controlarlos, además de alimentación y tierra. Estos LEDs son direccionables individualmente, alternando entre
+rojo, verde y azul en esta demo.</p>
+<p>Debes modificar el número de PIN utilizado en tu microcontrolador, si fuese necesario.</p>
+<pre data-id="demo-5"><code data-trim data-noescape class="python">PIN_NUM = 1</code></pre>
+</section>
+</section>
+<section >
+<section  id="componentes">
+<h2>Componentes</h2>
+<ul class="simple">
+<li><p>Microcontrolador compatible con Micropython, como ESP32 o Raspberry Pi Pico.</p></li>
+<li><p>3 LED APA106 (WS2812B).</p></li>
+<li><p>Resistencia de 330 ohmios (opcional, para limitar la corriente al LED).</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="instalacion">
+<h2>Instalación</h2>
+<ul>
+<li><p>Identifica el número de PIN al que vas a conectar el primer LED en tu microcontrolador, usando el esquema
+proporcionado por el fabricante.</p></li>
+<li><p>Identifica el PIN de alimentación (VCC) y tierra (GND) de los LEDs APA106 (WS2812B) que vas a utilizar. La tensión
+de alimentación debe ser de 5V.</p></li>
+<li><p>Emplea una resistencia de 330 ohmios en el cable de datos del LED APA106 (WS2812B) para limitar la corriente si
+dispones de una.</p></li>
+<li><p>Identifica cada uno de los pines de los LEDs APA106 (WS2812B):
+- El pin más corto es el de entrada de datos (Data In).
+- El pin más largo es el de tierra (GND).
+- El pin que está entre la entrada de datos y tierra es el de alimentación (VCC).
+- El pin restante es el de salida de datos (Data Out), que se conecta al siguiente LED APA106 (WS2812B) si hay más,</p>
+<blockquote>
+<div><p>a la entrada de datos del siguiente LED.</p>
+</div></blockquote>
+</li>
+<li><p>Conecta el pin de entrada de datos del primer LED APA106 (WS2812B) al PIN seleccionado en tu microcontrolador.</p></li>
+<li><p>Conecta el pin de salida de datos del primer LED APA106 (WS2812B) al pin de entrada de datos del segundo LED APA106
+(WS2812B), y así sucesivamente si hay más LEDs.</p></li>
+<li><p>Conecta el pin de alimentación (VCC) de los LEDs APA106 (WS2812B) al voltaje de 5V y el pin de tierra (GND) a tierra
+(GND) de tu microcontrolador.</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="simulacion">
+<h2>Simulación</h2>
+<p><a class="reference external" href="https://wokwi.com/projects/431056405050983425">https://wokwi.com/projects/431056405050983425</a></p>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="../../_static/revealjs/dist/reveal.js"></script>
+    
+    
+      <script src="../../_static/revealjs/plugin/notes/notes.js"></script>
+      <script src="../../_static/revealjs/plugin/highlight/highlight.js"></script>
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, {"controls": true, "progress": true, "history": true, "center": true, "margin": 0.2, "transition": "slide", "scrollActivationWidth": null});
+        
+        
+        
+          revealjsConfig.plugins = [
+            RevealNotes,RevealHighlight,
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>

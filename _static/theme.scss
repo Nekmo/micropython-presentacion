@@ -1,0 +1,624 @@
+/**
+  [ sunblind ]
+  A blindingly sunny theme for Reveal.js with Lora + Leto fonts and a colorful border.
+  By Josh Dzielak, https://dzello.com/, License MIT
+  The bold border is optional and requires some HTML. To use it:
+  1. Add 4 divs to your HTML page:
+    <div class="line top"></div>
+    <div class="line bottom"></div>
+    <div class="line left"></div>
+    <div class="line right"></div>
+  2. Set { margin: 0.2 } in the Reveal.js initializer to make sure
+  your presentation content doesn't collide with the frame.
+  Like the theme but don't like the colors? Don't fret. Just change
+  $borderColor and/or $linkColor below to something else and rebuild.
+  Or if you don't want to rebuild the theme just override the .line background
+  property with some CSS:
+  .line {
+    background: <new-color>;
+  }
+*/
+
+// Default mixins and settings -----------------
+@import "./mixins.scss";
+@import "./settings.scss";
+@import "./monokai.scss";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=M+PLUS+1p);
+@import url(https://fonts.googleapis.com/css?family=Lato:300,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:700);
+@import url(https://fonts.googleapis.com/css2?family=Trocchi&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Kalam&display=swap);
+
+
+// store colors in variables
+//$hotPink: #2b5b84;
+$hotPink: #FFD538;
+$secondaryColor: $hotPink;
+$sunshine: $hotPink;
+// the color of the thick border surrounding the presention
+$borderColor: $hotPink;
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: #363636;
+$headingColor: #141414;
+
+$mainFontSize: 32px;
+$mainFont: 'Lato', serif;
+$headingFont: 'Lora', sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 700;
+$linkColor: $hotPink;
+$purpleComplementary: #C8C24E;
+$linkColorHover: lighten( $linkColor, 15% );
+$sunshineColorHover: lighten( $sunshine, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.0em;
+$heading2Size: 1.8em;
+$heading3Size: 1.4em;
+$heading4Size: 1.2em;
+
+html {
+  --md-typeset-kbd-color: #fafafa;
+  --md-typeset-kbd-accent-color: #fff;
+  --md-typeset-kbd-border-color: #b8b8b8;
+  --md-default-fg-color: #0a0a0a;
+}
+
+section.has-light-background {
+  &, h1, h2, h3, h4, h5, h6 {
+    color: #141414;
+  }
+}
+
+.reveal .controls {
+  right: 50px;
+  bottom: 50px;
+}
+
+// Editor
+.reveal .slides {
+  .toolbar {
+    padding: 0.5rem;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    label {
+      font-size: 16px;
+    }
+
+    .status-indicator {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: red;
+      vertical-align: middle;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 650px);
+  }
+
+  .editor {
+    flex: 1;
+    width: 100%;
+    text-align: left;
+  }
+
+  .resizer {
+    height: 6px;
+    cursor: row-resize;
+    background: #ccc;
+  }
+
+  .terminal {
+    height: 100px;
+    background: #111111;
+    color: #0f0;
+    font-family: monospace;
+    padding: 1rem;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    font-size: 20px;
+    text-align: left;
+  }
+}
+
+// Camera
+#camera-box {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 600px;
+  height: 400px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background: #000;
+  resize: both;
+  overflow: hidden;
+  z-index: 999;
+  //display: none;
+  box-sizing: border-box;
+  opacity: 1;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+#camera-box.full-screen {
+  left: 1rem !important;
+  width: auto !important;
+  right: 1rem !important;
+  height: auto !important;
+  bottom: 1rem !important;
+  top: 1rem !important;
+}
+
+#camera-box.hidden {
+  opacity: 0;
+  display: none;
+}
+
+#camera-box video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+#camera-controls {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 999;
+
+  .controls {
+    display: inline-block;
+  }
+
+  label {
+    color: #fff;
+  }
+
+  input {
+    width: 50px;
+  }
+}
+
+// Video
+video::-webkit-media-controls {
+  display: none;
+}
+
+// List
+.reveal.slide {
+  .slides {
+    ul {
+      padding-left: 0;
+      margin-left: 0;
+
+      ul {
+        padding-left: 0;
+        margin-left: 0;
+      }
+
+      li {
+        list-style: none;
+
+        p {
+          font-size: 120%;
+
+          a {
+            font-weight: bold;
+          }
+
+          strong {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+
+  }
+}
+
+
+// Theme template ------------------------------
+@import "./template.scss";
+// ---------------------------------------------
+
+.reveal, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  font-family: 'M PLUS 1p', sans-serif;
+}
+
+.reveal .slides code, .ap-wrapper .ap-player.asciinema-theme-asciinema * {
+  font-family: monospace, SansSerif;
+}
+
+.reveal pre code {
+  max-height: 600px;
+}
+
+.reveal pre code span, .reveal pre code table tr td {
+  font-family: monospace;
+  text-transform: none;
+}
+
+.reveal h2, .reveal h3, .reveal p {
+  strong, code.docutils {
+    color: $sunshine;
+  }
+}
+
+.reveal h1 {
+  font-size: 3.5em;
+}
+
+.reveal h2 {
+  font-size: 3em;
+}
+
+.reveal h3 {
+  font-size: 2.5em;
+}
+
+.reveal .progress {
+  z-index: 1000;
+  color: darken($sunshine, 25%);
+}
+
+ul li {
+  line-height: 2em;
+}
+
+.has-dark-background {
+  h1, h2, h3 {
+    color: white;
+  }
+
+  ul, p {
+    color: #dedede;
+  }
+
+  strong {
+    color: white;
+  }
+}
+
+.reveal section img {
+  border: 0;
+  box-shadow: 0 0;
+  background: transparent;
+}
+
+.reveal pre code.hljs {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  padding: 15px;
+}
+
+#python-malaga {
+  ul li {
+    list-style: none;
+  }
+
+  a {
+    color: #FFFFFF;
+    font-weight: bold;
+  }
+}
+
+/* hide image background in slides */
+.slides section[data-background-color="#2b5b84"], #python-malaga, #pyzzas {
+  img {
+    background: none;
+  }
+}
+
+#camera-box {
+  &.camera {
+    .micropython-demo-video {
+      display: none;
+    }
+  }
+
+  &.demo {
+    #camera-video {
+      display: none;
+    }
+  }
+}
+
+@import "animations";
+
+/* Green lines */
+[data-background-color="#36760d"] {
+  h1, h2, h3, h4, h5, h6 {
+    color: #d8f0be;
+  }
+
+  p strong {
+    color: #e0bf4d;
+  }
+}
+
+/* Tron */
+[data-background-color="#44812a"] {
+  h1, h2, h3, h4, h5, h6 {
+    color: #FFE45E;
+    font-weight: bold;
+    font-size: 2.4em;
+  }
+}
+
+/* Circuit */
+section[data-background-color="#DDDDDD"] {
+  h1, h2, h3, h4 {
+    color: #8b8b8b;
+
+    strong {
+      color: #ffffff;
+      text-shadow: #000000 0 0 2px;
+    }
+  }
+}
+
+
+/* Slides with images without background */
+#intro, #opensouthcode, #sobre-mi-nekmo, #python {
+  a img {
+    background: none;
+  }
+}
+
+/* Slides without title */
+#gif-robot, #dinero, #gif-luces-led, #gif-recreativa, #gif-cientos-de-cables {
+  h1, h2, h3, h4 {
+    display: none;
+  }
+}
+
+/* Title with shadow */
+#microcontroladores, #esp32, #demos, #encender-un-led, #i2c {
+  h2, h3, h4 {
+    text-shadow: #000000 1px 0 10px;
+  }
+}
+
+/* Strong text in titles */
+.reveal {
+  h1, h2, h3, h4, h5, h6 {
+    strong {
+      color: $secondaryColor;
+    }
+  }
+}
+
+$blackComplementary: #FFD538;
+
+#intro {
+  p {
+    display: inline-block;
+    font-size: 2.0em;
+    vertical-align: bottom;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+  }
+}
+
+#sobre-mi-nekmo {
+  h2 {
+    width: 40%;
+    font-size: 2.5em;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 100px;
+    text-align: right;
+    line-height: 0.5em;;
+
+    strong {
+      font-size: 0.3em;
+      color: $secondaryColor;
+    }
+  }
+  table {
+    width: 40%;
+    display: inline-block;
+  }
+}
+
+#otras-charlas {
+  h2, h3, h4 {
+    font-size: 2em;
+  }
+}
+
+#microcontroladores {
+  h1, h2, h3, h4 {
+    font-size: 2.45em;
+    text-shadow: #000000 5px 10px 10px;
+  }
+}
+
+#algunos-usos {
+  ul {
+    font-size: 1.2em;
+  }
+}
+
+#variantes {
+  li {
+    font-size: 0.95em;
+  }
+
+  > ul > li {
+    padding-bottom: 5px;
+  }
+}
+
+#esp32 {
+  h1, h2, h3, h4 {
+    font-size: 6em;
+    text-shadow: #000000 20px 0 20px;
+  }
+}
+
+#demos {
+  font-size: 2em;
+
+  h1, h2, h3, h4 {
+    padding-top: 400px;
+  }
+}
+
+#conectar-un-boton, #conectar-un-led-rgb {
+  h1, h2, h3, h4 {
+    font-size: 2.6em;
+  }
+}
+
+#protocolos-de-comunicacion {
+  h1, h2, h3, h4 {
+    font-size: 2.5em;
+  }
+
+  ul {
+    font-size: 1.2em;
+  }
+}
+
+#conectar-un-led-ws2812 {
+  h1, h2, h3, h4 {
+    font-size: 2.5em;
+  }
+}
+
+#i2c {
+  h1, h2, h3, h4 {
+    font-size: 6em;
+  }
+}
+
+#conectar-sensor-y-pantalla-i2c {
+  h1, h2, h3, h4 {
+    font-size: 2.2em;
+  }
+}
+
+#codigo-sensor-y-pantalla-i2c {
+    h1, h2, h3, h4 {
+        font-size: 2.1em;
+    }
+}
+
+#wifi-y-bluetooth {
+  h1, h2, h3, h4 {
+    color: #ffffff;;
+    font-size: 3.2em;
+  }
+}
+
+#pruebalo-tu-mismo {
+  ul {
+    font-size: 1.2em;
+    color: #8B8B8B;
+    font-weight: bold;
+
+    a {
+      color: #8B8B8B;
+    }
+  }
+
+  strong {
+    color: #F2F2F2;
+    text-shadow: #8B8B8B 1px 0 10px;
+  }
+}
+
+#recursos {
+  a {
+    color: #ffffff;
+  }
+}
+
+#qr {
+  img {
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+  }
+}
+
+#donde-se-encuentra {
+  h3 {
+    font-size: 3em;
+  }
+
+  a {
+    font-size: 2em;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: #333333 1px 0 20px;
+  }
+}
+
+#y-esta-presentacion {
+  a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #466FF6;
+  }
+}
+
+#codigo-qr {
+  img {
+    background: #ffffff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.55);
+  }
+}
+
+#muchas-gracias-a-todos {
+  h2 {
+    color: white;
+    font-family: 'Kalam', cursive;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+  }
+}
+
+#contactar {
+  h2 {
+    //color: $sunshine;
+  }
+
+  ul li {
+    list-style: none;
+
+    p {
+      font-size: 120%;
+
+      a {
+        color: #dedede;
+        font-weight: bold;
+      }
+
+      strong {
+        color:  $secondaryColor;
+      }
+    }
+  }
+}

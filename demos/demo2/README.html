@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="es" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Demo 2</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/revealjs/dist/reveal.css?v=d4488b42" />
+    <link rel="stylesheet" href="../../_static/revealjs/dist/theme/.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/theme.css?v=4419f92b" />
+    <script src="../../_static/main.js?v=dd9c77c2"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  </head><body>
+    <div class="reveal">
+        <div class="slides" role="main">
+            <section >
+<section  id="demo-2">
+<h1>Demo 2</h1>
+<p>En esta demo se enciende y apaga un LED de forma gradual, gracias a la modulación por ancho de pulso (PWM).</p>
+<p>Debes modificar el número de PIN al que estés utilizando en tu microcontrolador, si fuese necesario.</p>
+<pre data-id="demo-2"><code data-trim data-noescape class="python">led = PWM(Pin(1), freq=1000)</code></pre>
+</section>
+</section>
+<section >
+<section  id="componentes">
+<h2>Componentes</h2>
+<ul class="simple">
+<li><p>Microcontrolador compatible con Micropython, como ESP32 o Raspberry Pi Pico.</p></li>
+<li><p>LED.</p></li>
+<li><p>Resistencia de 330 ohmios (opcional, para limitar la corriente al LED).</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="instalacion">
+<h2>Instalación</h2>
+<ul class="simple">
+<li><p>Identifica el número de PIN al que vas a conectar el LED en tu microcontrolador, usando el esquema proporcionado por
+el fabricante.</p></li>
+<li><p>Emplea una resistencia de 330 ohmios en serie con el LED para limitar la corriente, si dispones de una.</p></li>
+<li><p>Conecta el ánodo del LED (la pata más larga) al PIN seleccionado y el cátodo (la pata más corta) a tierra (GND).</p></li>
+</ul>
+</section>
+</section>
+<section >
+<section  id="simulacion">
+<h2>Simulación</h2>
+<p><a class="reference external" href="https://wokwi.com/projects/430964218492361729">https://wokwi.com/projects/430964218492361729</a></p>
+</section>
+
+        </div>
+    </div>
+    
+    <script src="../../_static/revealjs/dist/reveal.js"></script>
+    
+    
+      <script src="../../_static/revealjs/plugin/notes/notes.js"></script>
+      <script src="../../_static/revealjs/plugin/highlight/highlight.js"></script>
+      
+    
+    <script>
+        var revealjsConfig = new Object();
+        Object.assign(revealjsConfig, {"controls": true, "progress": true, "history": true, "center": true, "margin": 0.2, "transition": "slide", "scrollActivationWidth": null});
+        
+        
+        
+          revealjsConfig.plugins = [
+            RevealNotes,RevealHighlight,
+          ];
+        
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize(revealjsConfig);
+    </script>
+
+  </body>
+</html>
