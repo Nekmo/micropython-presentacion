@@ -732,11 +732,7 @@ Conectar **sensor** y **pantalla I2C**
 
     import json
     import time
-    from math import sqrt
     import network
-    import ubinascii
-    import uhashlib
-    import ustruct
     import web
     from hardware import I2C
     from hardware import Pin
@@ -750,14 +746,11 @@ Conectar **sensor** y **pantalla I2C**
     ap.active(True)
     ap.config(essid='roverc.pro', password='roverc.pro', authmode=network.AUTH_WPA_WPA2_PSK)
 
-
     while not ap.active():
         time.sleep(1)
 
-
     ip = ap.ifconfig()[0]
     print('IP:', ip)
-
 
     app = web.App(host='0.0.0.0', port=80)
 
@@ -776,8 +769,6 @@ Conectar **sensor** y **pantalla I2C**
         r2 = -x + y
         r3 = -x + y
         r4 = x + y
-        # r3 = x + y
-        # r4 = -x + y
         values = [r1, r2, r3, r4]
         max_val = max(abs(v) for v in values)
         if max_val > maximum:

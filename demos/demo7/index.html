@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoverC Pro</title>
+    <script src="joy.min.js"></script>
+    <style>
+    body {
+        background-color: #DDDDDD;
+    }
+    </style>
+</head>
+<body>
+<h2>RoverC Pro</h2>
+<div id="joyDiv" style="width:200px;height:200px;margin:50px;"></div>
+<div>
+    Position X:<input id="joyPositionX" type="text" /><br />
+    Position Y:<input id="joyPositionY" type="text" /><br />
+    Direction:<input id="joyDirection" type="text" /><br />
+    X :<input id="joyX" type="text" /></br>
+    Y :<input id="joyY" type="text" /></br>
+    <button onclick="sendClaw(true);">Open</button>
+    <button onclick="sendClaw(false);">Close</button>
+</div>
+<script>
+    let ws = new WebSocket('ws://' + location.hostname + '/ws');
+    ws.onopen = () => console.log("WebSocket connected");
+    ws.onerror = err => console.error("Error:", err);
+
+    function sendXY(x, y) {
+        ws.send(JSON.stringify({ "x": parseInt(x * 1.28), "y": parseInt(y * 1.28) }));
+    }
+
+    function sendClaw(claw) {
+        lastClaw = claw;
+        ws.send(JSON.stringify({ "claw": claw }));
+    }
+
+    function toggleClaw() {
+        sendClaw(!lastClaw);
+    }
+
+    let joyParam = { "title": "joystick3" };
+    let Joy = new JoyStick('joyDiv', joyParam);
+    let joyIinputPosX = document.getElementById("joyPositionX");
+    let joyInputPosY = document.getElementById("joyPositionY");
+    let joyDirection = document.getElementById("joyDirection");
+    let joyX = document.getElementById("joyX");
+    let joyY = document.getElementById("joyY");
+    let keyboardX = 0;
+    let keyboardY = 0;
+    let last = [null, null];
+    let lastClaw = null;
+
+    setInterval(function(){ joyIinputPosX.value=Joy.GetPosX(); }, 50);
+    setInterval(function(){ joyInputPosY.value=Joy.GetPosY(); }, 50);
+    setInterval(function(){ joyDirection.value=Joy.GetDir(); }, 50);
+    setInterval(function(){ joyX.value=Joy.GetX(); }, 50);
+    setInterval(function(){ joyY.value=Joy.GetY(); }, 50);
+    setInterval(function(){
+        let x = joyIinputPosX.value=Joy.GetX();
+        let y = joyInputPosY.value=Joy.GetY();
+        if (x === last[0] && y === last[1]) {
+            return;
+        }
+        sendXY(x, y);
+        last = [x, y];
+    }, 50);
+
+    document.addEventListener("keydown", function(event) {
+        switch (event.key) {
+            case "ArrowLeft":
+                keyboardX = -100;
+                sendXY(keyboardX, keyboardY);
+                break;
+            case "ArrowRight":
+                keyboardX = 100;
+                sendXY(keyboardX, keyboardY);
+                break;
+            case "ArrowUp":
+                keyboardY = 100;
+                sendXY(keyboardX, keyboardY);
+                break;
+            case "ArrowDown":
+                keyboardY = -100;
+                sendXY(keyboardX, keyboardY);
+                break;
+        }
+    });
+    document.addEventListener("keyup", function(event) {
+        switch (event.key) {
+            case "ArrowLeft":
+            case "ArrowRight":
+                keyboardX = 0;
+                sendXY(keyboardX, keyboardY);
+                break;
+            case "ArrowUp":
+            case "ArrowDown":
+                keyboardY = 0;
+                sendXY(keyboardX, keyboardY);
+                break;
+            case " ":
+                toggleClaw();
+                break;
+        }
+    });
+</script>
+</body>
+</html>
